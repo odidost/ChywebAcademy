@@ -1,26 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;750&family=Plus+Jakarta+Sans:wght@700;800&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --color-brand-navy: #0b0f19;
+  --color-brand-indigo: #4f46e5;
+  --color-brand-emerald: #2258ff;
+  --color-brand-emerald-hover: #1040e6;
+  --color-brand-gold: #f59e0b;
+  --color-brand-bg: #f5f4f0;
+  --color-brand-surface: #ffffff;
+  
+  --color-text-primary: #0b0f19;
+  --color-text-secondary: #2d3748;
+  --color-text-muted: #64748b;
+  --color-brand-border: #e2e8f0;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f5f4f0;
+  --foreground: #0b0f19;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #0b0f19;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Animations */
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1.5deg); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(10px) rotate(-1.5deg); }
+}
+
+@keyframes float-orb-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(4%, 4%) scale(1.08); }
+}
+
+@keyframes float-orb-2 {
+  0%, 100% { transform: translate(0, 0) scale(1.08); }
+  50% { transform: translate(-4%, -4%) scale(0.92); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 30s linear infinite;
+}
+
+.animate-float-1 {
+  animation: float-1 6s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-2 8s ease-in-out infinite;
+}
+
+/* dot-grid patterns */
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(11, 15, 25, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Linear Grid Overlay */
+.bg-line-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(11, 15, 25, 0.015) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(11, 15, 25, 0.015) 1px, transparent 1px);
+}
+
+/* Dynamic SVG Fractal Noise Overlay (SaaS texture look) */
+.bg-noise {
+  position: relative;
+}
+
+.bg-noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Globally Fixed Parallax Background Orbs */
+.fixed-orb-emerald {
+  position: fixed;
+  top: -15%;
+  left: -15%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(34, 88, 255, 0.04) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: float-orb-1 20s infinite ease-in-out;
+}
+
+.fixed-orb-gold {
+  position: fixed;
+  bottom: -10%;
+  right: -10%;
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.03) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: float-orb-2 25s infinite ease-in-out;
+}
+
+/* Premium Bento Glass Card (Light Mode, Off-white look) */
+.premium-bento-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(11, 15, 25, 0.08);
+  box-shadow: 0 12px 36px -12px rgba(11, 15, 25, 0.03);
+  border-radius: 24px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.premium-bento-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(34, 88, 255, 0.06));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.premium-bento-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px -15px rgba(11, 15, 25, 0.08);
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(34, 88, 255, 0.15);
+}
+
+/* Sticky Header glassmorphism */
+.glass-navbar {
+  background: rgba(242, 242, 236, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(11, 15, 25, 0.06);
+}
+
+/* Inputs and Forms styling */
+.premium-input {
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  padding: 0.75rem 1rem;
+  color: #0b0f19;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-input:focus {
+  outline: none;
+  border-color: #2258ff;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(34, 88, 255, 0.08);
 }
