@@ -1,0 +1,21 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
+  "/ai-productivity/page": "app/ai-productivity/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/career-services/page": "app/career-services/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/courses/page": "app/courses/page.js",
+  "/digital-marketing/page": "app/digital-marketing/page.js",
+  "/enroll/page": "app/enroll/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/free-resources/page": "app/free-resources/page.js",
+  "/graphic-design/page": "app/graphic-design/page.js",
+  "/icon.png/route": "app/icon.png/route.js",
+  "/page": "app/page.js",
+  "/pricing/page": "app/pricing/page.js",
+  "/seo-training/page": "app/seo-training/page.js",
+  "/success-stories/page": "app/success-stories/page.js",
+  "/web-design/page": "app/web-design/page.js"
+}

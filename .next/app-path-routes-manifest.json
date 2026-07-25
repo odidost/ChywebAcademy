@@ -1,0 +1,21 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/ai-productivity/page": "/ai-productivity",
+  "/blog/page": "/blog",
+  "/career-services/page": "/career-services",
+  "/contact/page": "/contact",
+  "/courses/page": "/courses",
+  "/digital-marketing/page": "/digital-marketing",
+  "/enroll/page": "/enroll",
+  "/faq/page": "/faq",
+  "/free-resources/page": "/free-resources",
+  "/graphic-design/page": "/graphic-design",
+  "/icon.png/route": "/icon.png",
+  "/page": "/",
+  "/pricing/page": "/pricing",
+  "/seo-training/page": "/seo-training",
+  "/success-stories/page": "/success-stories",
+  "/web-design/page": "/web-design"
+}

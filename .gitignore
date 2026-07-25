@@ -14,7 +14,7 @@
 /coverage
 
 # next.js
-/.next/
+# /.next/ (commented out to allow pushing pre-built files to cPanel)
 /out/
 
 # production
