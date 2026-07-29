@@ -5,11 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:cpanel": "cp -rL node_modules tmp_modules && rm -rf node_modules && mv tmp_modules node_modules && next build",
-    "start": "node server.js",
+    "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.110.8",
     "framer-motion": "^12.42.2",
     "lucide-react": "^1.25.0",
     "next": "16.2.10",
