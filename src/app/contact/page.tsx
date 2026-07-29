@@ -16,8 +16,8 @@ export default function ContactPage() {
   };
 
   const contactInfo = [
-    { label: "Admissions Phone", val: "+234 (0) 803 XXXXXXX", icon: <Phone className="text-brand-emerald" size={20} /> },
-    { label: "Email Support", val: "info@chywebacademy.com", icon: <Mail className="text-brand-emerald" size={20} /> },
+    { label: "Admissions Phone", val: "0906 762 3555", icon: <Phone className="text-brand-emerald" size={20} /> },
+    { label: "Email Support", val: "chywebacademy@gmail.com", icon: <Mail className="text-brand-emerald" size={20} /> },
     { label: "Office Address", val: "Lagos, Nigeria (Physical Cohorts)", icon: <MapPin className="text-brand-emerald" size={20} /> },
     { label: "Admissions Hours", val: "Mon - Sat: 9:00 AM - 5:00 PM", icon: <Clock className="text-brand-emerald" size={20} /> },
   ];
@@ -133,7 +133,7 @@ export default function ContactPage() {
             <div className="border-t border-slate-100 mt-8 pt-8 text-center flex flex-col items-center">
               <span className="text-xs text-slate-500 mb-4 block">Need immediate support?</span>
               <a
-                href="https://wa.me/234XXXXXXXXXX"
+                href="https://wa.me/2349067623555"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-50 border border-blue-200 text-blue-600 hover:bg-blue-100 transition-all font-bold text-xs"

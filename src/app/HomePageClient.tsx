@@ -1174,7 +1174,7 @@ export default function HomePage() {
               Join Chyweb Academy and build practical skills in Digital Marketing, SEO, and Paid Advertising through hands-on learning and real-world projects.
             </p>
             <a
-              href="https://wa.me/234XXXXXXXXXX"
+              href="https://wa.me/2349067623555"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#2258FF] hover:bg-[#1040e6] text-white font-bold shadow-[0_8px_24px_rgba(34,88,255,0.3)] hover:-translate-y-0.5 transition-all relative z-10"

@@ -66,7 +66,7 @@ export default function CareerServicesPage() {
           <h3 className="text-xl font-bold text-slate-900 mb-2">Need Direct Career Mentorship?</h3>
           <p className="text-slate-600 text-sm mb-6">Alumni receive lifetime access to our recruitment partner networking events.</p>
           <a
-            href="https://wa.me/234XXXXXXXXXX"
+            href="https://wa.me/2349067623555"
             target="_blank"
             rel="noreferrer"
             className="px-6 py-3 rounded-lg bg-brand-emerald hover:bg-brand-emerald-hover text-white font-bold text-sm shadow-md hover:-translate-y-0.5 transition-all inline-block"

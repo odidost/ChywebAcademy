@@ -89,12 +89,12 @@ export default function Footer() {
           <ul className="flex flex-col gap-4 border-t border-slate-800/80 pt-4">
             <li className="flex gap-2.5 items-start text-slate-400 text-sm">
               <Phone size={16} className="text-brand-emerald mt-0.5" />
-              <span>+234 (0) 803 XXXXXXX</span>
+              <span>0906 762 3555</span>
             </li>
             <li className="flex gap-2.5 items-start text-slate-400 text-sm">
               <Mail size={16} className="text-[#2258FF] mt-0.5" />
-              <a href="mailto:info@chywebacademy.com" className="hover:text-white transition-colors">
-                info@chywebacademy.com
+              <a href="mailto:chywebacademy@gmail.com" className="hover:text-white transition-colors">
+                chywebacademy@gmail.com
               </a>
             </li>
             <li className="flex gap-2.5 items-start text-slate-400 text-sm">

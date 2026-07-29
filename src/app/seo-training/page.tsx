@@ -506,7 +506,7 @@ export default function SeoTrainingPage() {
               The future of digital marketing extends beyond traditional SEO. Learn practical strategies to help businesses rank on Google, appear in AI-powered search experiences, and remain competitive.
             </p>
             <a
-              href="https://wa.me/234XXXXXXXXXX"
+              href="https://wa.me/2349067623555"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-brand-emerald hover:bg-brand-emerald-hover text-white font-bold shadow-lg hover:-translate-y-0.5 transition-all"
