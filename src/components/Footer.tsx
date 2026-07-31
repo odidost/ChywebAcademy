@@ -30,6 +30,11 @@ export default function Footer() {
               </svg>
             </a>
           </div>
+          <div className="mt-6">
+            <a href="https://aitoolshaven.com" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform hover:-translate-y-1 duration-300">
+              <img src="https://aitoolshaven.com/badges/featured-on-aitoolshaven.svg" alt="Featured on AIToolsHaven" width="250" height="54" />
+            </a>
+          </div>
         </div>
 
         {/* Links Column */}

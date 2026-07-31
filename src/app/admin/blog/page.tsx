@@ -13,6 +13,7 @@ interface BlogPost {
   featured_image: string;
   published: boolean;
   published_at: string;
+  meta_title: string;
 }
 
 export default function BlogManager() {
@@ -88,7 +89,7 @@ export default function BlogManager() {
   const startCreate = () => {
     setIsCreating(true);
     setEditingId('new');
-    setEditForm({ title: '', slug: '', excerpt: '', content: '', published: false });
+    setEditForm({ title: '', slug: '', excerpt: '', content: '', published: false, meta_title: '' });
   };
 
   return (
@@ -154,6 +155,17 @@ export default function BlogManager() {
             </div>
 
             <div>
+              <label className="block text-sm font-bold text-slate-700 mb-2">Meta Title</label>
+              <input 
+                type="text" 
+                value={editForm.meta_title || ''} 
+                onChange={(e) => setEditForm({...editForm, meta_title: e.target.value})}
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-emerald focus:ring-4 focus:ring-brand-emerald/10 outline-none"
+                placeholder="SEO Meta Title (defaults to Post Title if empty)"
+              />
+            </div>
+
+            <div>
               <label className="block text-sm font-bold text-slate-700 mb-2">Excerpt (Meta Description)</label>
               <textarea 
                 value={editForm.excerpt || ''} 
@@ -164,7 +176,32 @@ export default function BlogManager() {
             </div>
 
             <div>
-              <label className="block text-sm font-bold text-slate-700 mb-2">Main Content (Markdown/HTML supported)</label>
+              <div className="flex items-center justify-between mb-2">
+                <label className="block text-sm font-bold text-slate-700">Main Content (Markdown/HTML supported)</label>
+                <div className="flex gap-2">
+                  <button 
+                    type="button" 
+                    onClick={() => setEditForm({...editForm, content: (editForm.content || '') + '\n## Heading 2\n'})}
+                    className="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded"
+                  >
+                    Heading
+                  </button>
+                  <button 
+                    type="button" 
+                    onClick={() => setEditForm({...editForm, content: (editForm.content || '') + '[Link Text](https://)'})}
+                    className="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded"
+                  >
+                    Link
+                  </button>
+                  <button 
+                    type="button" 
+                    onClick={() => setEditForm({...editForm, content: (editForm.content || '') + '\n![Alt Text](https://)\n'})}
+                    className="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded"
+                  >
+                    Media
+                  </button>
+                </div>
+              </div>
               <textarea 
                 value={editForm.content || ''} 
                 onChange={(e) => setEditForm({...editForm, content: e.target.value})}

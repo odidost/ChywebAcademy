@@ -10,6 +10,7 @@ interface SeoEntry {
   title: string;
   description: string;
   keywords: string;
+  sitemap?: boolean;
 }
 
 export default function SeoManager() {
@@ -67,7 +68,7 @@ export default function SeoManager() {
   const startCreate = () => {
     setIsCreating(true);
     setEditingId('new');
-    setEditForm({ path: '/', title: '', description: '', keywords: '' });
+    setEditForm({ path: '/', title: '', description: '', keywords: '', sitemap: true });
   };
 
   return (
@@ -92,9 +93,10 @@ export default function SeoManager() {
           <table className="w-full text-left">
             <thead className="bg-slate-50 border-b border-slate-200">
               <tr>
-                <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Path</th>
+                <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">URL Permalink</th>
                 <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Meta Title</th>
                 <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Keywords</th>
+                <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Sitemap</th>
                 <th className="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider text-right">Actions</th>
               </tr>
             </thead>
@@ -126,6 +128,17 @@ export default function SeoManager() {
                       </td>
                       <td className="px-6 py-4">
                         <p className="text-xs text-slate-600 truncate max-w-[200px]">{entry.keywords}</p>
+                      </td>
+                      <td className="px-6 py-4">
+                        {entry.sitemap ? (
+                          <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-emerald-100 text-emerald-800">
+                            Included
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-800">
+                            Excluded
+                          </span>
+                        )}
                       </td>
                       <td className="px-6 py-4 text-right">
                         <div className="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -161,7 +174,7 @@ function EditForm({ form, setForm, onSave, onCancel }: { form: any, setForm: any
     <div className="space-y-4">
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-bold text-slate-700 mb-1">Route Path (e.g., /about)</label>
+          <label className="block text-xs font-bold text-slate-700 mb-1">URL Permalink (e.g., /about)</label>
           <input 
             type="text" 
             value={form.path || ''} 
@@ -198,6 +211,18 @@ function EditForm({ form, setForm, onSave, onCancel }: { form: any, setForm: any
           onChange={(e) => setForm({...form, keywords: e.target.value})}
           className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:border-brand-emerald focus:ring-2 focus:ring-brand-emerald/20 outline-none text-sm"
         />
+      </div>
+
+      <div>
+        <label className="flex items-center gap-2 cursor-pointer mt-2">
+          <input 
+            type="checkbox" 
+            checked={form.sitemap || false}
+            onChange={(e) => setForm({...form, sitemap: e.target.checked})}
+            className="w-4 h-4 text-brand-emerald rounded focus:ring-brand-emerald"
+          />
+          <span className="text-xs font-bold text-slate-700">Include in Sitemap</span>
+        </label>
       </div>
 
       <div className="flex justify-end gap-2 pt-2">

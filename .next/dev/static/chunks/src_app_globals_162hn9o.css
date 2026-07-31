@@ -85,6 +85,7 @@
     --color-emerald-100: #d0fae5;
     --color-emerald-600: #009767;
     --color-emerald-700: #007956;
+    --color-emerald-800: #005f46;
     --color-blue-50: #eff6ff;
     --color-blue-100: #dbeafe;
     --color-blue-200: #bedbff;
@@ -189,6 +190,7 @@
       --color-emerald-100: lab(94.9004% -17.0769 5.63836);
       --color-emerald-600: lab(55.0481% -49.9246 15.93);
       --color-emerald-700: lab(44.4871% -41.0396 11.0361);
+      --color-emerald-800: lab(35.3675% -33.1188 8.04002);
       --color-blue-50: lab(96.492% -1.14647 -5.11479);
       --color-blue-100: lab(92.0301% -2.24757 -11.6453);
       --color-blue-200: lab(86.15% -4.04379 -21.0797);
@@ -2655,6 +2657,10 @@
 
   .text-emerald-700 {
     color: var(--color-emerald-700);
+  }
+
+  .text-emerald-800 {
+    color: var(--color-emerald-800);
   }
 
   .text-green-400 {
