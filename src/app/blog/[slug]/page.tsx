@@ -10,7 +10,7 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   const decodedSlug = decodeURIComponent(params.slug);
   const { data: post } = await supabase
     .from('blog_posts')
-    .select('title, excerpt, meta_title, featured_image')
+    .select('title, excerpt, featured_image')
     .eq('slug', decodedSlug)
     .single();
 
@@ -19,7 +19,7 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   }
 
   return {
-    title: post.meta_title || `${post.title} | Chyweb Academy Blog`,
+    title: `${post.title} | Chyweb Academy Blog`,
     description: post.excerpt,
     openGraph: {
       title: post.title,
