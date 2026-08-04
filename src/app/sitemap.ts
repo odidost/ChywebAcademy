@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chywebacademy.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://chyweb.com.ng';
 
   // Core pages
   const routes = [
