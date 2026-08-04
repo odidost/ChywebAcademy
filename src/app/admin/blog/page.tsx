@@ -361,7 +361,20 @@ export default function BlogManager() {
               </div>
             </div>
             
-            <div className="pt-4 border-t border-slate-100 flex justify-end">
+            <div className="pt-4 border-t border-slate-100 flex justify-between items-center">
+              <label className="flex items-center gap-3 cursor-pointer group">
+                <div className="relative">
+                  <input 
+                    type="checkbox" 
+                    className="sr-only peer"
+                    checked={editForm.published || false}
+                    onChange={(e) => setEditForm({...editForm, published: e.target.checked})}
+                  />
+                  <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-emerald"></div>
+                </div>
+                <span className="text-sm font-bold text-slate-700 group-hover:text-slate-900 transition-colors">Publish Post</span>
+              </label>
+              
               <button onClick={handleSave} className="flex items-center gap-2 px-8 py-3 rounded-xl bg-slate-900 text-white font-bold hover:bg-slate-800 transition-colors shadow-lg">
                 <Save size={18} /> Save Post
               </button>

@@ -5,6 +5,8 @@ import { ArrowLeft, Calendar, User } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
+export const revalidate = 0; // Disable Next.js caching for this route
+
 export async function generateMetadata(props: { params: Promise<{ slug: string }> }) {
   const params = await props.params;
   const decodedSlug = decodeURIComponent(params.slug);

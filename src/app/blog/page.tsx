@@ -2,6 +2,8 @@ import BlogClient from './BlogClient';
 import { getPageMetadata } from "@/lib/seo";
 import { supabase } from '@/lib/supabase';
 
+export const revalidate = 0; // Disable Next.js caching for this route
+
 export async function generateMetadata() {
   return getPageMetadata('/blog', {
     title: "Blog | Chyweb Academy",
