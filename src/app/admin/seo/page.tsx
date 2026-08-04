@@ -32,8 +32,11 @@ export default function SeoManager() {
   }, []);
 
   const handleSave = async () => {
+    // Exclude sitemap from payload since it's not in the database schema yet
+    const { sitemap, ...payload } = editForm;
+
     if (isCreating) {
-      const { error } = await supabase.from('pages_seo').insert([editForm]);
+      const { error } = await supabase.from('pages_seo').insert([payload]);
       if (!error) {
         setIsCreating(false);
         setEditingId(null);
@@ -42,7 +45,7 @@ export default function SeoManager() {
         alert(error.message);
       }
     } else if (editingId) {
-      const { error } = await supabase.from('pages_seo').update(editForm).eq('id', editingId);
+      const { error } = await supabase.from('pages_seo').update(payload).eq('id', editingId);
       if (!error) {
         setEditingId(null);
         fetchEntries();
