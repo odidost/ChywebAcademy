@@ -23,6 +23,65 @@ export default function BlogManager() {
   const [editForm, setEditForm] = useState<Partial<BlogPost>>({});
   const [isCreating, setIsCreating] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const featuredImageInputRef = useRef<HTMLInputElement>(null);
+  const mediaImageInputRef = useRef<HTMLInputElement>(null);
+  const [uploadingFeatured, setUploadingFeatured] = useState(false);
+  const [uploadingMedia, setUploadingMedia] = useState(false);
+
+  const uploadToSupabase = async (file: File) => {
+    if (file.size > 102400) {
+      alert("File is too large. Maximum size is 100kb.");
+      return null;
+    }
+    
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${Math.random().toString(36).substring(2, 15)}_${Date.now()}.${fileExt}`;
+    const filePath = `${fileName}`;
+
+    const { error: uploadError } = await supabase.storage
+      .from('blog-images')
+      .upload(filePath, file);
+
+    if (uploadError) {
+      alert("Error uploading image: " + uploadError.message);
+      return null;
+    }
+
+    const { data: { publicUrl } } = supabase.storage
+      .from('blog-images')
+      .getPublicUrl(filePath);
+
+    return publicUrl;
+  };
+
+  const handleFeaturedImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files || e.target.files.length === 0) return;
+    setUploadingFeatured(true);
+    const url = await uploadToSupabase(e.target.files[0]);
+    if (url) {
+      setEditForm({ ...editForm, featured_image: url });
+    }
+    setUploadingFeatured(false);
+    if (featuredImageInputRef.current) featuredImageInputRef.current.value = '';
+  };
+
+  const handleMediaUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files || e.target.files.length === 0) return;
+    setUploadingMedia(true);
+    const url = await uploadToSupabase(e.target.files[0]);
+    if (url) {
+      const textarea = textareaRef.current;
+      if (textarea) {
+        const start = textarea.selectionStart;
+        const end = textarea.selectionEnd;
+        const content = editForm.content || '';
+        const newContent = content.substring(0, start) + `\n![Image](${url})\n` + content.substring(end);
+        setEditForm({ ...editForm, content: newContent });
+      }
+    }
+    setUploadingMedia(false);
+    if (mediaImageInputRef.current) mediaImageInputRef.current.value = '';
+  };
 
   const applyLink = () => {
     const textarea = textareaRef.current;
@@ -237,12 +296,20 @@ export default function BlogManager() {
                   >
                     Link
                   </button>
+                  <input 
+                    type="file" 
+                    accept="image/*" 
+                    className="hidden" 
+                    ref={mediaImageInputRef} 
+                    onChange={handleMediaUpload} 
+                  />
                   <button 
                     type="button" 
-                    onClick={() => setEditForm({...editForm, content: (editForm.content || '') + '\n![Alt Text](https://)\n'})}
-                    className="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded"
+                    onClick={() => mediaImageInputRef.current?.click()}
+                    disabled={uploadingMedia}
+                    className="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded disabled:opacity-50"
                   >
-                    Media
+                    {uploadingMedia ? 'Uploading...' : 'Media'}
                   </button>
                 </div>
               </div>
@@ -256,18 +323,41 @@ export default function BlogManager() {
             </div>
 
             <div>
-              <label className="block text-sm font-bold text-slate-700 mb-2">Featured Image URL</label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
-                  <ImageIcon size={18} />
-                </div>
+              <label className="block text-sm font-bold text-slate-700 mb-2">Featured Image</label>
+              
+              <div className="flex items-center gap-4">
+                {editForm.featured_image && (
+                  <div className="w-20 h-20 rounded-lg overflow-hidden border border-slate-200 shadow-sm flex-shrink-0 relative group">
+                    <img src={editForm.featured_image} alt="Featured Preview" className="w-full h-full object-cover" />
+                    <button 
+                      type="button"
+                      onClick={() => setEditForm({...editForm, featured_image: ''})}
+                      className="absolute inset-0 bg-black/50 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      <X size={16} />
+                    </button>
+                  </div>
+                )}
+                
                 <input 
-                  type="text" 
-                  value={editForm.featured_image || ''} 
-                  onChange={(e) => setEditForm({...editForm, featured_image: e.target.value})}
-                  className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 focus:border-brand-emerald focus:ring-4 focus:ring-brand-emerald/10 outline-none"
-                  placeholder="https://example.com/image.jpg"
+                  type="file" 
+                  accept="image/*" 
+                  className="hidden" 
+                  ref={featuredImageInputRef} 
+                  onChange={handleFeaturedImageUpload} 
                 />
+                
+                <div className="flex-1">
+                  <button 
+                    type="button" 
+                    onClick={() => featuredImageInputRef.current?.click()}
+                    disabled={uploadingFeatured}
+                    className="flex items-center gap-2 px-4 py-3 rounded-xl border border-dashed border-slate-300 hover:border-brand-emerald hover:bg-brand-emerald/5 text-slate-600 font-medium transition-all w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                  >
+                    <ImageIcon size={18} className={uploadingFeatured ? 'animate-pulse text-brand-emerald' : ''} />
+                    {uploadingFeatured ? 'Uploading Image...' : 'Click to Upload Featured Image (Max 100kb)'}
+                  </button>
+                </div>
               </div>
             </div>
             
