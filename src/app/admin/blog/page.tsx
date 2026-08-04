@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { supabase } from '@/lib/supabase';
 import { Save, Plus, Trash2, Edit2, X, Globe, EyeOff, Image as ImageIcon, FileText } from 'lucide-react';
 
@@ -22,6 +22,39 @@ export default function BlogManager() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editForm, setEditForm] = useState<Partial<BlogPost>>({});
   const [isCreating, setIsCreating] = useState(false);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const applyLink = () => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+    
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const content = editForm.content || '';
+    
+    const selectedText = content.substring(start, end) || 'Link Text';
+    const url = window.prompt('Enter the URL:', 'https://');
+    
+    if (url) {
+      const newContent = content.substring(0, start) + `[${selectedText}](${url})` + content.substring(end);
+      setEditForm({ ...editForm, content: newContent });
+    }
+  };
+
+  const applyHeading = (level: string) => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+    
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const content = editForm.content || '';
+    
+    const prefix = '#'.repeat(parseInt(level)) + ' ';
+    const selectedText = content.substring(start, end) || 'Heading';
+    
+    const newContent = content.substring(0, start) + `\n${prefix}${selectedText}\n` + content.substring(end);
+    setEditForm({ ...editForm, content: newContent });
+  };
 
   const fetchPosts = async () => {
     setLoading(true);
@@ -48,9 +81,12 @@ export default function BlogManager() {
   };
 
   const handleSave = async () => {
+    // Exclude meta_title from payload since it's not in the database schema yet
+    const { meta_title, ...restForm } = editForm;
+    
     const dataToSave = {
-      ...editForm,
-      published_at: editForm.published && !editForm.published_at ? new Date().toISOString() : editForm.published_at
+      ...restForm,
+      published_at: restForm.published && !restForm.published_at ? new Date().toISOString() : restForm.published_at
     };
 
     if (isCreating) {
@@ -179,16 +215,24 @@ export default function BlogManager() {
               <div className="flex items-center justify-between mb-2">
                 <label className="block text-sm font-bold text-slate-700">Main Content (Markdown/HTML supported)</label>
                 <div className="flex gap-2">
-                  <button 
-                    type="button" 
-                    onClick={() => setEditForm({...editForm, content: (editForm.content || '') + '\n## Heading 2\n'})}
-                    className="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded"
+                  <select 
+                    onChange={(e) => {
+                      if(e.target.value) {
+                        applyHeading(e.target.value);
+                        e.target.value = "";
+                      }
+                    }}
+                    className="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded outline-none cursor-pointer"
                   >
-                    Heading
-                  </button>
+                    <option value="">Heading</option>
+                    <option value="1">Heading 1 (H1)</option>
+                    <option value="2">Heading 2 (H2)</option>
+                    <option value="3">Heading 3 (H3)</option>
+                    <option value="4">Heading 4 (H4)</option>
+                  </select>
                   <button 
                     type="button" 
-                    onClick={() => setEditForm({...editForm, content: (editForm.content || '') + '[Link Text](https://)'})}
+                    onClick={applyLink}
                     className="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded"
                   >
                     Link
@@ -203,6 +247,7 @@ export default function BlogManager() {
                 </div>
               </div>
               <textarea 
+                ref={textareaRef}
                 value={editForm.content || ''} 
                 onChange={(e) => setEditForm({...editForm, content: e.target.value})}
                 className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-emerald focus:ring-4 focus:ring-brand-emerald/10 outline-none h-96 font-mono text-sm"

@@ -2,57 +2,37 @@
 
 import { useState } from "react";
 import { Search, Calendar, User, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
-export default function BlogPage() {
+export default function BlogPage({ initialPosts = [] }: { initialPosts?: any[] }) {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
-  const categories = ["All", "SEO", "Web Design", "AI Productivity", "Digital Marketing", "Graphic Design"];
+  const categories = ["All", "Article", "SEO", "Web Design", "AI Productivity", "Digital Marketing", "Graphic Design"];
 
-  const articles = [
-    {
-      title: "Generative Engine Optimization (GEO): The Future of Search",
-      desc: "Traditional SEO is shifting. Learn how to optimize your brand so ChatGPT, Gemini, and Claude recommend you as a reference source.",
-      cat: "SEO",
-      date: "Jul 15, 2026",
+  const articles = initialPosts.map(post => {
+    // Basic read time estimation (200 words per minute)
+    const wordCount = post.content ? post.content.split(/\\s+/).length : 0;
+    const readTimeMins = Math.max(1, Math.ceil(wordCount / 200));
+
+    // Format date
+    const dateObj = new Date(post.published_at);
+    const dateStr = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+    return {
+      id: post.id,
+      slug: post.slug,
+      title: post.title,
+      desc: post.excerpt || "Read this full article to learn more...",
+      cat: "Article", // Default category
+      date: dateStr,
       author: "Oko David",
-      readTime: "6 min read",
-    },
-    {
-      title: "How to Build a Custom Landing Page in WordPress using Elementor Pro",
-      desc: "A step-by-step layout guide mapping wireframe creation, typography spacing, color boards, and responsive padding controls.",
-      cat: "Web Design",
-      date: "Jul 12, 2026",
-      author: "Oko David",
-      readTime: "8 min read",
-    },
-    {
-      title: "Supercharging Agency Copywriting Output using Claude and Prompt Chaining",
-      desc: "Discover prompt chaining formulas that turn raw research facts into cohesive, brand-aligned email and landing page copy.",
-      cat: "AI Productivity",
-      date: "Jul 08, 2026",
-      author: "Oko David",
-      readTime: "5 min read",
-    },
-    {
-      title: "Structuring High-Converting Lead Generation Funnels on Meta Ads",
-      desc: "Learn pixel integrations, custom event definitions, and audience mapping setups to decrease lead acquisition costs in Nigeria.",
-      cat: "Digital Marketing",
-      date: "Jul 03, 2026",
-      author: "Oko David",
-      readTime: "9 min read",
-    },
-    {
-      title: "Developing a Corporate Brand Identity Styleguide in Illustrator",
-      desc: "Master layout setups, grid bounds, color models (RGB/CMYK), and typography scales for professional visual portfolios.",
-      cat: "Graphic Design",
-      date: "Jun 28, 2026",
-      author: "Oko David",
-      readTime: "7 min read",
-    },
-  ];
+      readTime: `${readTimeMins} min read`,
+      featured_image: post.featured_image
+    };
+  });
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -124,13 +104,17 @@ export default function BlogPage() {
                 <span className="flex items-center gap-1.5"><Calendar size={14} /> {articles[0].date}</span>
                 <span>{articles[0].readTime}</span>
               </div>
-              <a href="#" className="inline-flex items-center gap-2 text-brand-emerald text-sm font-bold hover:gap-3 transition-all">
+              <Link href={`/blog/${articles[0].slug}`} className="inline-flex items-center gap-2 text-brand-emerald text-sm font-bold hover:gap-3 transition-all">
                 Read Full Article
                 <ArrowRight size={16} />
-              </a>
+              </Link>
             </div>
-            <div className="rounded-xl border border-slate-200 bg-slate-50 h-64 flex justify-center items-center text-center font-sans text-slate-400 font-medium">
-              💻 Article Preview Display
+            <div className="rounded-xl border border-slate-200 bg-slate-50 h-64 overflow-hidden flex justify-center items-center text-center font-sans text-slate-400 font-medium relative">
+              {articles[0].featured_image ? (
+                <img src={articles[0].featured_image} alt={articles[0].title} className="absolute inset-0 w-full h-full object-cover" />
+              ) : (
+                "💻 Article Preview Display"
+              )}
             </div>
           </div>
         )}
@@ -138,12 +122,17 @@ export default function BlogPage() {
         {/* Article Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {filtered.map((art, idx) => (
-            <div key={idx} className="premium-card rounded-2xl p-6 flex flex-col justify-between hover:border-brand-emerald/20 transition-all">
-              <div>
+            <div key={idx} className="premium-card rounded-2xl p-6 flex flex-col justify-between hover:border-brand-emerald/20 transition-all overflow-hidden relative">
+              {art.featured_image && (
+                <div className="w-full h-40 -mx-6 -mt-6 mb-4 bg-slate-100 relative">
+                  <img src={art.featured_image} alt={art.title} className="absolute inset-0 w-full h-full object-cover" />
+                </div>
+              )}
+              <Link href={`/blog/${art.slug}`} className="block">
                 <span className="text-[10px] font-bold text-brand-emerald bg-brand-emerald/10 py-0.5 px-2 rounded-full mb-4 block w-fit">{art.cat}</span>
                 <h3 className="text-base font-bold text-slate-900 mb-3 hover:text-brand-emerald transition-colors leading-snug">{art.title}</h3>
-                <p className="text-slate-600 text-xs leading-relaxed mb-6">{art.desc}</p>
-              </div>
+                <p className="text-slate-600 text-xs leading-relaxed mb-6 line-clamp-3">{art.desc}</p>
+              </Link>
               <div className="border-t border-slate-100 pt-4 flex justify-between items-center text-[10px] text-slate-500">
                 <span>By {art.author}</span>
                 <span>{art.date}</span>
