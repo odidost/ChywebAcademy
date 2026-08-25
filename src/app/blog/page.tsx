@@ -2,7 +2,7 @@ import BlogClient from './BlogClient';
 import { getPageMetadata } from "@/lib/seo";
 import { supabase } from '@/lib/supabase';
 
-export const revalidate = 0; // Disable Next.js caching for this route
+export const revalidate = 60; // Cache for 60 seconds (ISR) to reduce edge requests
 
 export async function generateMetadata() {
   return getPageMetadata('/blog', {
