@@ -8,6 +8,7 @@
   "/admin/page": "app/admin/page.js",
   "/admin/seo/page": "app/admin/seo/page.js",
   "/ai-productivity/page": "app/ai-productivity/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
   "/blog/page": "app/blog/page.js",
   "/career-services/page": "app/career-services/page.js",
   "/contact/page": "app/contact/page.js",
@@ -20,7 +21,9 @@
   "/icon.png/route": "app/icon.png/route.js",
   "/page": "app/page.js",
   "/pricing/page": "app/pricing/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
   "/seo-training/page": "app/seo-training/page.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
   "/success-stories/page": "app/success-stories/page.js",
   "/web-design/page": "app/web-design/page.js"
 }

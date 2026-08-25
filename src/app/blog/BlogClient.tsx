@@ -1,20 +1,24 @@
 "use client";
 
-import { useState } from "react";
-import { Search, Calendar, User, ArrowRight } from "lucide-react";
+import { useState, useRef } from "react";
+import { Search, Calendar, User, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+
+const POSTS_PER_PAGE = 8;
 
 export default function BlogPage({ initialPosts = [] }: { initialPosts?: any[] }) {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
+  const articlesSectionRef = useRef<HTMLDivElement>(null);
 
   const categories = ["All", "Article", "SEO", "Web Design", "AI Productivity", "Digital Marketing", "Graphic Design"];
 
   const articles = initialPosts.map(post => {
     // Basic read time estimation (200 words per minute)
-    const wordCount = post.content ? post.content.split(/\\s+/).length : 0;
+    const wordCount = post.content ? post.content.split(/\s+/).length : 0;
     const readTimeMins = Math.max(1, Math.ceil(wordCount / 200));
 
     // Format date
@@ -42,11 +46,32 @@ export default function BlogPage({ initialPosts = [] }: { initialPosts?: any[] }
     }
   };
 
+  const handleCategoryChange = (cat: string) => {
+    setActiveCategory(cat);
+    setCurrentPage(1);
+  };
+
+  const handleSearchChange = (query: string) => {
+    setSearchQuery(query);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+    if (articlesSectionRef.current) {
+      articlesSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const filtered = articles.filter((a) => {
     const matchesCat = activeCategory === "All" || a.cat === activeCategory;
     const matchesQuery = a.title.toLowerCase().includes(searchQuery.toLowerCase()) || a.desc.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCat && matchesQuery;
   });
+
+  const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
+  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+  const currentArticles = filtered.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   return (
     <div className="relative min-h-screen bg-dot-grid bg-line-grid bg-noise bg-[#F5F4F0] pt-12">
@@ -63,14 +88,14 @@ export default function BlogPage({ initialPosts = [] }: { initialPosts?: any[] }
         </div>
 
         {/* Search & Filters */}
-        <div className="flex flex-col md:flex-row gap-6 justify-between items-center mb-12 border-b border-slate-200 pb-8">
+        <div ref={articlesSectionRef} className="flex flex-col md:flex-row gap-6 justify-between items-center mb-12 border-b border-slate-200 pb-8">
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => handleCategoryChange(cat)}
                 className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-                  activeCategory === cat ? "bg-brand-emerald text-white" : "bg-slate-100 text-slate-600 hover:text-brand-navy"
+                  activeCategory === cat ? "bg-brand-emerald text-white shadow-sm" : "bg-slate-100 text-slate-600 hover:text-brand-navy hover:bg-slate-200"
                 }`}
               >
                 {cat}
@@ -83,15 +108,15 @@ export default function BlogPage({ initialPosts = [] }: { initialPosts?: any[] }
             <input
               type="text"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => handleSearchChange(e.target.value)}
               placeholder="Search articles..."
               className="w-full premium-input pl-10"
             />
           </div>
         </div>
 
-        {/* Featured Hero Article */}
-        {filtered.length > 0 && searchQuery === "" && activeCategory === "All" && (
+        {/* Featured Hero Article (Shows only on Page 1 when not searching or filtering) */}
+        {filtered.length > 0 && currentPage === 1 && searchQuery === "" && activeCategory === "All" && (
           <div className="premium-card rounded-2xl p-8 md:p-12 mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <span className="text-[10px] font-extrabold text-brand-emerald uppercase tracking-widest block mb-4 bg-brand-emerald/10 border border-brand-emerald/20 px-3 py-1 rounded-full w-fit">
@@ -120,26 +145,103 @@ export default function BlogPage({ initialPosts = [] }: { initialPosts?: any[] }
         )}
 
         {/* Article Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          {filtered.map((art, idx) => (
-            <div key={idx} className="premium-card rounded-2xl p-6 flex flex-col justify-between hover:border-brand-emerald/20 transition-all overflow-hidden relative">
-              {art.featured_image && (
-                <div className="w-full h-40 -mx-6 -mt-6 mb-4 bg-slate-100 relative">
-                  <img src={art.featured_image} alt={art.title} className="absolute inset-0 w-full h-full object-cover" />
+        {filtered.length === 0 ? (
+          <div className="text-center py-20 bg-white rounded-2xl border border-slate-200 mb-16 p-8">
+            <div className="text-4xl mb-4">🔍</div>
+            <h3 className="text-xl font-bold text-slate-900 mb-2">No articles found</h3>
+            <p className="text-slate-500 text-sm max-w-md mx-auto mb-6">
+              We couldn&apos;t find any posts matching your search or category filter. Try using different keywords or resetting filters.
+            </p>
+            <button
+              onClick={() => { setActiveCategory("All"); setSearchQuery(""); setCurrentPage(1); }}
+              className="px-5 py-2.5 bg-brand-emerald text-white rounded-lg text-sm font-semibold hover:bg-brand-emerald-hover transition-colors cursor-pointer"
+            >
+              Reset Filters
+            </button>
+          </div>
+        ) : (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              {currentArticles.map((art, idx) => (
+                <div key={art.id || idx} className="premium-card rounded-2xl p-5 flex flex-col justify-between hover:border-brand-emerald/30 hover:shadow-lg transition-all overflow-hidden relative group">
+                  {art.featured_image && (
+                    <div className="w-full h-44 -mx-5 -mt-5 mb-4 bg-slate-100 relative overflow-hidden">
+                      <img src={art.featured_image} alt={art.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    </div>
+                  )}
+                  <Link href={`/blog/${art.slug}`} className="block flex-1">
+                    <span className="text-[10px] font-bold text-brand-emerald bg-brand-emerald/10 py-0.5 px-2 rounded-full mb-3 block w-fit">{art.cat}</span>
+                    <h3 className="text-sm md:text-base font-bold text-slate-900 mb-2 hover:text-brand-emerald transition-colors leading-snug line-clamp-2">{art.title}</h3>
+                    <p className="text-slate-600 text-xs leading-relaxed mb-4 line-clamp-3">{art.desc}</p>
+                  </Link>
+                  <div className="border-t border-slate-100 pt-3 flex justify-between items-center text-[10px] text-slate-500 mt-auto">
+                    <span>By {art.author}</span>
+                    <span>{art.date}</span>
+                  </div>
                 </div>
-              )}
-              <Link href={`/blog/${art.slug}`} className="block">
-                <span className="text-[10px] font-bold text-brand-emerald bg-brand-emerald/10 py-0.5 px-2 rounded-full mb-4 block w-fit">{art.cat}</span>
-                <h3 className="text-base font-bold text-slate-900 mb-3 hover:text-brand-emerald transition-colors leading-snug">{art.title}</h3>
-                <p className="text-slate-600 text-xs leading-relaxed mb-6 line-clamp-3">{art.desc}</p>
-              </Link>
-              <div className="border-t border-slate-100 pt-4 flex justify-between items-center text-[10px] text-slate-500">
-                <span>By {art.author}</span>
-                <span>{art.date}</span>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
+
+            {/* Pagination Controls */}
+            {totalPages > 1 && (
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-6 px-6 bg-white rounded-2xl border border-slate-200 mb-20 shadow-sm">
+                <div className="text-xs text-slate-500">
+                  Showing <span className="font-semibold text-slate-900">{startIndex + 1}</span> to{" "}
+                  <span className="font-semibold text-slate-900">
+                    {Math.min(startIndex + POSTS_PER_PAGE, filtered.length)}
+                  </span>{" "}
+                  of <span className="font-semibold text-slate-900">{filtered.length}</span> articles
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    aria-label="Previous Page"
+                    className={`inline-flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                      currentPage === 1
+                        ? "opacity-40 cursor-not-allowed bg-slate-100 text-slate-400"
+                        : "bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900"
+                    }`}
+                  >
+                    <ChevronLeft size={16} />
+                    <span>Previous</span>
+                  </button>
+
+                  <div className="flex items-center gap-1">
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                      <button
+                        key={pageNum}
+                        onClick={() => handlePageChange(pageNum)}
+                        className={`w-8 h-8 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          currentPage === pageNum
+                            ? "bg-brand-emerald text-white shadow-sm"
+                            : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
+                        }`}
+                      >
+                        {pageNum}
+                      </button>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                    aria-label="Next Page / View More"
+                    className={`inline-flex items-center gap-1 px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                      currentPage === totalPages
+                        ? "opacity-40 cursor-not-allowed bg-slate-100 text-slate-400"
+                        : "bg-brand-emerald hover:bg-brand-emerald-hover text-white shadow-sm"
+                    }`}
+                  >
+                    <span>View More / Next</span>
+                    <ChevronRight size={16} />
+                  </button>
+                </div>
+              </div>
+            )}
+          </>
+        )}
 
         {/* Newsletter Signup */}
         <div className="rounded-3xl border border-slate-200 bg-white p-8 md:p-12 text-center max-w-3xl mx-auto shadow-md">
@@ -172,3 +274,4 @@ export default function BlogPage({ initialPosts = [] }: { initialPosts?: any[] }
     </div>
   );
 }
+
