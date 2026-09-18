@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Check, Star, Monitor, Shield, Award, Users, BookOpen, Clock, ShieldCheck, ChevronRight, Activity, Cpu, Calendar, Zap, Layout, Play, BarChart2, Briefcase, Globe, Sparkles, Code, CheckCircle, Mail, MessageSquare, TrendingUp, HelpCircle } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import DecorativeIcon from "@/components/DecorativeIcon";
 import FaqSection from "@/components/FaqSection";
 
@@ -397,12 +396,7 @@ export default function HomePage() {
           <div className="hidden lg:block lg:col-span-5 relative h-[480px]">
             
             {/* Widget 1: Active Academy Cohorts Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="absolute top-10 left-4 w-72 bg-white border border-slate-200/80 rounded-2xl p-5 shadow-xl z-10 text-slate-900"
-            >
+            <div className="absolute top-10 left-4 w-72 bg-white border border-slate-200/80 rounded-2xl p-5 shadow-xl z-10 text-slate-900">
               <div className="flex items-center justify-between gap-2 mb-3">
                 <span className="text-[10px] text-slate-400 font-mono uppercase tracking-widest">Live Academy Status</span>
                 <span className="flex h-2 w-2 relative">
@@ -416,14 +410,10 @@ export default function HomePage() {
                 </div>
                 <div className="text-xs text-slate-500 font-medium">Active enrolled learners currently tracking courses.</div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Widget 2: Floating Student Review Badge */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-4 right-2 w-64 bg-slate-950 border border-slate-800 rounded-2xl p-5 shadow-2xl z-20 text-white"
-            >
+            <div className="absolute -top-4 right-2 w-64 bg-slate-950 border border-slate-800 rounded-2xl p-5 shadow-2xl z-20 text-white animate-float-1">
               <div className="flex items-center gap-1 text-yellow-500 mb-2">
                 <Star size={11} fill="currentColor" />
                 <Star size={11} fill="currentColor" />
@@ -438,14 +428,10 @@ export default function HomePage() {
                 <strong className="text-white">Tunde Olanrewaju</strong>
                 <span className="text-slate-400">Graduate</span>
               </div>
-            </motion.div>
+            </div>
 
             {/* Widget 3: Practical Tools Connected */}
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-              className="absolute top-1/2 -left-8 w-60 bg-white border border-slate-200/80 rounded-2xl p-4.5 shadow-xl z-30 flex flex-col gap-3"
-            >
+            <div className="absolute top-1/2 -left-8 w-60 bg-white border border-slate-200/80 rounded-2xl p-4.5 shadow-xl z-30 flex flex-col gap-3 animate-float-2">
               <div className="flex justify-between items-center text-[9px] text-slate-400 uppercase tracking-widest font-mono">
                 <span>Tools Config</span>
                 <span>Active</span>
@@ -457,7 +443,7 @@ export default function HomePage() {
                 </span>
                 <Cpu size={15} className="text-[#2258FF]" />
               </div>
-            </motion.div>
+            </div>
 
           </div>
         </div>
@@ -609,12 +595,7 @@ export default function HomePage() {
 
             {/* Right Side Testimonials Grid */}
             <div className="lg:col-span-7 flex flex-col gap-6">
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="premium-bento-card rounded-2xl p-6.5 bg-white/90"
-              >
+              <div className="premium-bento-card rounded-2xl p-6.5 bg-white/90">
                 <div className="flex gap-1 text-yellow-500 mb-3">
                   <Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" />
                 </div>
@@ -625,14 +606,9 @@ export default function HomePage() {
                   <strong className="text-slate-900">Tunde Olanrewaju</strong>
                   <span className="text-slate-500 font-medium">Digital Marketing Graduate</span>
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="premium-bento-card rounded-2xl p-6.5 bg-white/90"
-              >
+              <div className="premium-bento-card rounded-2xl p-6.5 bg-white/90">
                 <div className="flex gap-1 text-yellow-500 mb-3">
                   <Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" />
                 </div>
@@ -643,14 +619,9 @@ export default function HomePage() {
                   <strong className="text-slate-900">Chioma Nkem</strong>
                   <span className="text-slate-500 font-medium">Business Owner & Designer</span>
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="premium-bento-card rounded-2xl p-6.5 bg-white/90"
-              >
+              <div className="premium-bento-card rounded-2xl p-6.5 bg-white/90">
                 <div className="flex gap-1 text-yellow-555 mb-3">
                   <Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" /><Star size={12} fill="currentColor" />
                 </div>
@@ -661,7 +632,7 @@ export default function HomePage() {
                   <strong className="text-slate-900">Ibrahim Audu</strong>
                   <span className="text-slate-500 font-medium">Freelance Consultant</span>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
           </div>
@@ -685,12 +656,8 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {modules.map((m, idx) => (
-              <motion.div
+              <div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.05 }}
                 className="premium-bento-card rounded-[20px] p-8 hover:border-[#2258FF]/30 transition-all bg-white/80"
               >
                 <div className="flex justify-between items-center mb-4">
@@ -709,7 +676,7 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -866,14 +833,11 @@ export default function HomePage() {
                   />
                   
                   {/* Stroke line */}
-                  <motion.path
+                  <path
                     d="M0,22 Q15,8 30,18 T60,5 T90,12 T100,6"
                     fill="none"
                     stroke="#2258FF"
                     strokeWidth="1.2"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 2.5, ease: "easeInOut" }}
                   />
                   
                   {/* Pulsing indicator dot */}
@@ -1137,21 +1101,13 @@ export default function HomePage() {
                     <span>{faq.q}</span>
                     <span className="text-[#2258FF] text-lg font-bold">{isOpen ? "−" : "+"}</span>
                   </button>
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0 }}
-                        animate={{ height: "auto" }}
-                        exit={{ height: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="p-6 pt-0 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-200">
-                          {faq.a}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  {isOpen && (
+                    <div className="overflow-hidden">
+                      <div className="p-6 pt-0 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-200">
+                        {faq.a}
+                      </div>
+                    </div>
+                  )}
                 </div>
               );
             })}

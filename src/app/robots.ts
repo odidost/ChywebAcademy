@@ -11,8 +11,9 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/admin/', '/api/'],
       },
       {
-        // Block aggressive scraper bots that consume high edge request quotas
-        userAgent: ['Bytespider', 'PetalBot', 'ClaudeBot', 'GPTBot', 'CCBot', 'Amazonbot'],
+        // Block aggressive non-search scraper bots that consume high edge request quotas
+        // Allow GPTBot, ClaudeBot, PerplexityBot to enable Answer Engine Optimization (AEO) search citations
+        userAgent: ['Bytespider', 'PetalBot', 'CCBot', 'Amazonbot'],
         disallow: ['/'],
       },
     ],

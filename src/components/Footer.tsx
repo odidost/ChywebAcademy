@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
 export default function Footer() {
@@ -7,14 +8,21 @@ export default function Footer() {
       {/* Decorative Glow */}
       <div className="absolute top-0 right-0 w-80 h-80 orb-glow-emerald opacity-20 pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16 relative z-10">
         {/* Brand Column */}
-        <div className="flex flex-col gap-5 md:col-span-2">
+        <div className="flex flex-col gap-5 lg:col-span-2">
           <Link href="/" className="flex items-center group w-fit">
-            <img src="/logo.png" alt="Chyweb Academy Logo" className="h-24 w-auto object-contain brightness-0 invert" />
+            <Image
+              src="/logo.png"
+              alt="Chyweb Academy Logo"
+              width={144}
+              height={96}
+              loading="lazy"
+              className="h-24 w-auto object-contain brightness-0 invert"
+            />
           </Link>
           <p className="text-slate-300 text-sm leading-relaxed max-w-sm font-sans">
-            Become a Certified Digital Marketing Professional in Nigeria. We equip learners with practical, AI-powered digital skills to build careers, secure freelancing gigs, and grow businesses.
+            Specialist Digital Marketing & Web Development for Hospitality, Hotels, Restaurants, and High-Growth Brands in Nigeria.
           </p>
           <div className="flex gap-4 items-center mt-2">
             {/* Inline SVG Facebook */}
@@ -32,12 +40,12 @@ export default function Footer() {
           </div>
           <div className="mt-6">
             <a href="https://aitoolshaven.com" target="_blank" rel="noopener noreferrer">
-              <img src="https://aitoolshaven.com/badges/featured-on-aitoolshaven.svg" alt="Featured on AIToolsHaven" width="250" height="54" />
+              <img src="https://aitoolshaven.com/badges/featured-on-aitoolshaven.svg" alt="Featured on AIToolsHaven" width="250" height="54" loading="lazy" />
             </a>
           </div>
         </div>
 
-        {/* Links Column */}
+        {/* Programs Column */}
         <div>
           <h4 className="text-white font-bold mb-6 text-xs uppercase tracking-wider font-sans">Programs</h4>
           <ul className="flex flex-col gap-3.5">
@@ -63,6 +71,55 @@ export default function Footer() {
               <Link href="/courses" className="text-slate-400 text-sm hover:text-white transition-colors font-medium flex items-center gap-1 group">
                 <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-brand-emerald" />
                 All Courses
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Agency Services Column */}
+        <div>
+          <h4 className="text-white font-bold mb-6 text-xs uppercase tracking-wider font-sans">Agency Services</h4>
+          <ul className="flex flex-col gap-3.5">
+            <li>
+              <Link href="/hospitality-digital-marketing-agency-nigeria" className="text-slate-400 text-sm hover:text-white transition-colors font-medium flex items-center gap-1 group">
+                <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-brand-emerald" />
+                Hospitality Marketing
+              </Link>
+            </li>
+            <li>
+              <Link href="/hospitality-web-designer-nigeria" className="text-slate-400 text-sm hover:text-white transition-colors font-medium flex items-center gap-1 group">
+                <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-brand-emerald" />
+                Hospitality Web Design
+              </Link>
+            </li>
+            <li>
+              <Link href="/hotel-digital-marketing-agency-nigeria" className="text-slate-400 text-sm hover:text-white transition-colors font-medium flex items-center gap-1 group">
+                <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-brand-emerald" />
+                Hotel Digital Marketing
+              </Link>
+            </li>
+            <li>
+              <Link href="/hotel-booking-web-designer-nigeria" className="text-slate-400 text-sm hover:text-white transition-colors font-medium flex items-center gap-1 group">
+                <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-brand-emerald" />
+                Hotel Booking Engines
+              </Link>
+            </li>
+            <li>
+              <Link href="/hotel-seo-agency-nigeria" className="text-slate-400 text-sm hover:text-white transition-colors font-medium flex items-center gap-1 group">
+                <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-brand-emerald" />
+                Hotel SEO (AEO & GEO)
+              </Link>
+            </li>
+            <li>
+              <Link href="/hospitality-audit" className="text-amber-400 text-sm hover:text-amber-300 transition-colors font-bold flex items-center gap-1 group">
+                <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-amber-400" />
+                Free 48-Hour Property Audit
+              </Link>
+            </li>
+            <li>
+              <Link href="/ecommerce-seo-agency-nigeria" className="text-slate-400 text-sm hover:text-white transition-colors font-medium flex items-center gap-1 group">
+                <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-brand-emerald" />
+                Ecommerce SEO
               </Link>
             </li>
           </ul>

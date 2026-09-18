@@ -21,6 +21,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/graphic-design',
     '/success-stories',
     '/web-design',
+    '/hospitality-digital-marketing-agency-nigeria',
+    '/hospitality-web-designer-nigeria',
+    '/hotel-digital-marketing-agency-nigeria',
+    '/hotel-booking-web-designer-nigeria',
+    '/hotel-seo-agency-nigeria',
+    '/hospitality-audit',
+    '/ecommerce-seo-agency-nigeria',
   ];
 
   return routes.map((route) => ({

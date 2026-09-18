@@ -1,3 +1,6 @@
 {
-  "/blog/page": "app/blog/page.js"
+  "/ecommerce-seo-agency-nigeria/page": "app/ecommerce-seo-agency-nigeria/page.js",
+  "/hospitality-digital-marketing-agency-nigeria/page": "app/hospitality-digital-marketing-agency-nigeria/page.js",
+  "/hospitality-web-designer-nigeria/page": "app/hospitality-web-designer-nigeria/page.js",
+  "/page": "app/page.js"
 }

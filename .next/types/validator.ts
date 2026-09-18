@@ -153,6 +153,15 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+// Validate ../../src/app/ecommerce-seo-agency-nigeria/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/ecommerce-seo-agency-nigeria">> = Specific
+  const handler = {} as typeof import("../../src/app/ecommerce-seo-agency-nigeria/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/enroll/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/enroll">> = Specific
@@ -184,6 +193,60 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 {
   type __IsExpected<Specific extends AppPageConfig<"/graphic-design">> = Specific
   const handler = {} as typeof import("../../src/app/graphic-design/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/hospitality-audit/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/hospitality-audit">> = Specific
+  const handler = {} as typeof import("../../src/app/hospitality-audit/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/hospitality-digital-marketing-agency-nigeria/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/hospitality-digital-marketing-agency-nigeria">> = Specific
+  const handler = {} as typeof import("../../src/app/hospitality-digital-marketing-agency-nigeria/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/hospitality-web-designer-nigeria/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/hospitality-web-designer-nigeria">> = Specific
+  const handler = {} as typeof import("../../src/app/hospitality-web-designer-nigeria/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/hotel-booking-web-designer-nigeria/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/hotel-booking-web-designer-nigeria">> = Specific
+  const handler = {} as typeof import("../../src/app/hotel-booking-web-designer-nigeria/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/hotel-digital-marketing-agency-nigeria/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/hotel-digital-marketing-agency-nigeria">> = Specific
+  const handler = {} as typeof import("../../src/app/hotel-digital-marketing-agency-nigeria/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/hotel-seo-agency-nigeria/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/hotel-seo-agency-nigeria">> = Specific
+  const handler = {} as typeof import("../../src/app/hotel-seo-agency-nigeria/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

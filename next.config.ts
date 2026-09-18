@@ -3,6 +3,17 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Compress assets with gzip/brotli
   compress: true,
+
+  // Modern image optimization formats
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
+
+  // Performance optimizations
+  experimental: {
+    inlineCss: true,
+    optimizePackageImports: ["lucide-react", "framer-motion"],
+  },
   
   // Cache static assets aggressively in browser/CDN
   async headers() {
