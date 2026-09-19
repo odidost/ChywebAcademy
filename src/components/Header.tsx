@@ -83,7 +83,7 @@ export default function Header() {
     },
     {
       name: "Hotel Booking Web Design",
-      desc: "Frictionless booking engines & native payment checkout.",
+      desc: "Fast booking systems & easy payment checkout.",
       href: "/hotel-booking-web-designer-nigeria",
       icon: <CalendarCheck className="text-[#2258FF]" size={18} />,
       tag: "Engine UX",
@@ -220,7 +220,7 @@ export default function Header() {
                   <Link
                     href="/hospitality-audit"
                     onClick={() => setIsAgencyOpen(false)}
-                    className="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black transition-all flex items-center gap-1 shadow-sm"
+                    className="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-900 text-xs font-black transition-all flex items-center gap-1 shadow-sm"
                   >
                     Audit Property →
                   </Link>

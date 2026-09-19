@@ -323,7 +323,7 @@ export default function HotelSeoAgencyClient() {
             SHOWCASE: The Tri-Channel Search Cockpit (Google Maps + AEO + GEO)
         ========================================================================= */}
         <div className="max-w-5xl mx-auto">
-          <div className="rounded-[32px] sm:rounded-[40px] border-4 border-white shadow-[0_24px_60px_rgba(11,15,25,0.12)] overflow-hidden bg-slate-950 relative group">
+          <div className="rounded-[32px] sm:rounded-[40px] border-4 border-white shadow-[0_24px_60px_rgba(11,15,25,0.12)] overflow-hidden bg-[#0a1e64] relative group">
             {/* Window Header */}
             <div className="px-5 py-3.5 bg-slate-900 border-b border-slate-800/80 flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -331,7 +331,7 @@ export default function HotelSeoAgencyClient() {
                 <div className="w-3 h-3 rounded-full bg-amber-500/80" />
                 <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
               </div>
-              <div className="text-[11px] font-mono text-slate-400 bg-slate-950/80 px-4 py-1 rounded-full border border-slate-800">
+              <div className="text-[11px] font-mono text-slate-400 bg-[#0a1e64]/80 px-4 py-1 rounded-full border border-slate-800">
                 chyweb.agency/hotel-seo/tri-channel-cockpit
               </div>
               <div className="flex items-center gap-2 text-emerald-400 text-xs font-bold">
@@ -347,7 +347,7 @@ export default function HotelSeoAgencyClient() {
                 alt="Luxury Hotel in Lagos Recommended by AI"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 brightness-[0.85]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-slate-950/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1e64] via-[#0a1e64]/40 to-[#0a1e64]/20" />
 
               {/* Floating Google 3-Pack Badge */}
               <div className="absolute top-6 left-6 z-20 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md text-white font-bold text-xs shadow-lg border border-white/10">
@@ -755,7 +755,7 @@ export default function HotelSeoAgencyClient() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="w-full sm:w-auto px-10 py-4.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-base shadow-[0_12px_28px_rgba(245,158,11,0.35)] transition-all hover:scale-105 cursor-pointer flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-10 py-4.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-900 font-black text-base shadow-[0_12px_28px_rgba(245,158,11,0.35)] transition-all hover:scale-105 cursor-pointer flex items-center justify-center gap-2"
               >
                 <span>Book a Free Hotel SEO Audit</span>
                 <ArrowRight size={18} />

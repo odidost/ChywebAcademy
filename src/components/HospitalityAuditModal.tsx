@@ -106,7 +106,7 @@ export default function HospitalityAuditModal({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-slate-950/80 backdrop-blur-md transition-opacity"
+            className="fixed inset-0 bg-[#0a1e64]/80 backdrop-blur-md transition-opacity"
           />
 
           {/* Modal Card */}
@@ -118,7 +118,7 @@ export default function HospitalityAuditModal({
             className="relative w-full max-w-4xl bg-white border-2 border-slate-200/90 rounded-[28px] sm:rounded-[36px] shadow-[0_25px_70px_rgba(11,15,25,0.35)] overflow-hidden z-10 my-auto max-h-[92vh] flex flex-col"
           >
             {/* Top Urgency Ribbon */}
-            <div className="bg-gradient-to-r from-slate-950 via-[#1240e3] to-[#2258FF] text-white text-[11px] sm:text-xs font-black py-2.5 px-5 flex items-center justify-between border-b border-white/15 flex-shrink-0">
+            <div className="bg-gradient-to-r from-[#0a1e64] via-[#1240e3] to-[#2258FF] text-white text-[11px] sm:text-xs font-black py-2.5 px-5 flex items-center justify-between border-b border-white/15 flex-shrink-0">
               <div className="flex items-center gap-2">
                 <span className="flex h-2 w-2 relative">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />

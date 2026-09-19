@@ -18,7 +18,7 @@ export default function GrandSlamOfferCard({
   const stackItems = [
     {
       title: "Conversion-Engineered Direct-Booking Engine & Mobile UX",
-      desc: "Native date picker, room cards, and zero-friction checkout that cuts the 85% mobile abandonment rate.",
+      desc: "Simple date picker, clear room cards, and easy checkout that stops guests from leaving without booking.",
       value: "₦1,200,000",
     },
     {

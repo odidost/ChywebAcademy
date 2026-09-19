@@ -54,7 +54,7 @@ export default function LiveHospitalityBookingWidget({
       <div
         className={`absolute inset-0 transition-colors duration-700 ${
           bookingType === "restaurant"
-            ? "bg-gradient-to-br from-amber-950/92 via-slate-950/85 to-blue-950/90"
+            ? "bg-gradient-to-br from-amber-950/92 via-[#0a1e64]/85 to-blue-950/90"
             : "bg-gradient-to-br from-[#2258FF]/95 via-[#1040e6]/90 to-blue-950/92"
         }`}
       />
@@ -84,7 +84,7 @@ export default function LiveHospitalityBookingWidget({
             }}
             className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-black transition-all cursor-pointer ${
               bookingType === "restaurant"
-                ? "bg-amber-500 text-slate-950 shadow-md font-black"
+                ? "bg-amber-500 text-slate-900 shadow-md font-black"
                 : "text-white/80 hover:text-white"
             }`}
           >
@@ -201,7 +201,7 @@ export default function LiveHospitalityBookingWidget({
           onClick={handleSimulate}
           className={`w-full sm:w-auto px-8 py-3.5 rounded-xl font-black text-xs sm:text-sm transition-all shadow-xl flex items-center justify-center gap-2 cursor-pointer ${
             bookingType === "restaurant"
-              ? "bg-amber-400 hover:bg-amber-300 text-slate-950 shadow-amber-500/30"
+              ? "bg-amber-400 hover:bg-amber-300 text-slate-900 shadow-amber-500/30"
               : "bg-white hover:bg-slate-100 text-[#2258FF] shadow-white/20"
           }`}
         >

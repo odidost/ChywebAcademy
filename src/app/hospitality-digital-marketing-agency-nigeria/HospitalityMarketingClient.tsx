@@ -30,6 +30,9 @@ import {
   Check,
   Lock,
   Building2,
+  Share2,
+  Camera,
+  Globe,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import FaqSection from "@/components/FaqSection";
@@ -150,35 +153,112 @@ export default function HospitalityMarketingClient() {
     },
   ];
 
+  const coreServices = [
+    {
+      icon: <Globe className="text-[#2258FF]" size={20} />,
+      title: "Web Design",
+      badge: "Fast & Mobile-First",
+      image: "/images/luxury_hotel_suite.jpg",
+      imageLabel: "Direct Booking UI",
+      desc: "Fast, mobile-friendly websites and booking flows built for how guests actually browse and reserve—live room availability, quick Paystack, card, and bank transfer checkout, and verified guest reviews shown clearly, so your site turns website visitors into confirmed paying guests.",
+      highlight: "Quick checkout with card and bank transfer",
+    },
+    {
+      icon: <Search className="text-[#2258FF]" size={20} />,
+      title: "SEO (Local & AI Search)",
+      badge: "Google & AI",
+      image: "/images/hospitality_seo_maps.jpg",
+      imageLabel: "Google Maps & AI Search",
+      desc: (
+        <>
+          Hotel and restaurant-specific local search optimization so you show up when travelers search <em>"hotels in Victoria Island"</em> or diners search <em>"best restaurant near me,"</em> and increasingly, when they ask an AI assistant <em>"where should I stay in Lagos for a business trip."</em> This is the same framework behind our broader{" "}
+          <a
+            href="https://chyweb.com.ng/blog/best-ai-seo-agency-in-nigeria-rank-in-ai-overviews"
+            className="text-[#2258FF] font-bold underline hover:text-blue-700 transition-colors"
+          >
+            AI-powered SEO
+          </a>{" "}
+          work, applied specifically to hospitality search behavior.
+        </>
+      ),
+      highlight: "Top 3 Google Maps pack & AI travel assistant citations",
+    },
+    {
+      icon: <Compass className="text-amber-500" size={20} />,
+      title: "Google Business Profile Optimization",
+      badge: "First Impression",
+      image: "/images/hotel_lobby_lagos.jpg",
+      imageLabel: "Verified Local Presence",
+      desc: "Accurate hours, complete photos, correct menu or room details, and consistent information across booking platforms and directories, since your Google Business Profile is often the very first impression a guest gets of your property, before your website, before a single review.",
+      highlight: "Complete photos, verified hours & direct call buttons",
+    },
+    {
+      icon: <Share2 className="text-emerald-500" size={20} />,
+      title: "Social Media",
+      badge: "Engaging & Responsive",
+      image: "/images/rooftop_dining_lounge.jpg",
+      imageLabel: "Social Engagement & Hype",
+      desc: "Content management across Instagram, Facebook, and WhatsApp built around how Nigerian guests actually move between platforms during the decision process—crisp photography, promotions, and responsive messaging that keeps your property visible and top of mind.",
+      highlight: "Active engagement from Instagram reels to WhatsApp closes",
+    },
+    {
+      icon: <Camera className="text-amber-500" size={20} />,
+      title: "Content Development",
+      badge: "Sensory & Visual",
+      image: "/images/vibrant_dining_restaurant.jpg",
+      imageLabel: "Sensory Food & Room Visuals",
+      desc: "Photography, menu descriptions, room and amenity content, and destination or neighborhood storytelling that actually converts scrollers into bookings, built around what genuinely gets shared and searched for in Nigerian hospitality.",
+      highlight: "Sensory visuals that make guests crave your rooms & food",
+    },
+    {
+      icon: <Star className="text-amber-500" size={20} />,
+      title: "Reputation Management",
+      badge: "5-Star Trust Flow",
+      image: "/images/hotel_lobby_lagos.jpg",
+      imageLabel: "5-Star Review Systems",
+      desc: "A structured system to generate more guest reviews and respond to them in a way that builds trust rather than looking defensive, since reviews are one of the strongest trust signals for both human travelers and the AI systems increasingly summarizing your property before a guest even clicks through.",
+      highlight: "Automated post-checkout & table QR review generation",
+    },
+    {
+      icon: <Zap className="text-[#2258FF]" size={20} />,
+      title: "Paid Ads",
+      badge: "High Intent",
+      image: "/images/luxury_resort_lagos.jpg",
+      imageLabel: "High-Intent Paid Acquisition",
+      desc: "Targeted campaigns for high-intent searches, last-minute bookings, seasonal promotions, or specific events, built to capture guests at the exact moment they're deciding where to stay or eat, rather than competing on broad, expensive keywords that don't convert.",
+      highlight: "Targeted capture of high-paying weekend & corporate guests",
+    },
+  ];
+
   const frameworkSteps = [
     {
       num: "01",
-      title: "Free Direct Revenue Audit",
-      desc: "We inspect your Google ranking, website speed, and OTA commission leaks, showing you exactly how much money you're leaving on the table.",
+      title: "Audit",
+      desc: "We review your current website, Google Business Profile, reviews, and booking flow to find exactly where you're losing guests and revenue.",
       icon: <Search size={20} className="text-[#2258FF]" />,
     },
     {
       num: "02",
-      title: "Custom Local Growth Plan",
-      desc: "We build a simple, step-by-step game plan tailored to your city, whether your property is in Lagos, Abuja, or Port Harcourt.",
+      title: "Strategy",
+      desc: "We build a plan specific to your property, your competitive set, and your city, not a generic template borrowed from another industry.",
       icon: <Compass size={20} className="text-amber-500" />,
     },
     {
       num: "03",
-      title: "Fast Setup & Direct Booking Launch",
-      desc: "We overhaul your Google profile, install 1-tap mobile booking, and link instant card and transfer checkouts that guests love.",
+      title: "Execution",
+      desc: "Web design, SEO, content, social media, and reputation management rolled out in a structured order, prioritized by what moves revenue fastest.",
       icon: <Zap size={20} className="text-emerald-500" />,
     },
     {
       num: "04",
-      title: "Local & AI Search Domination",
-      desc: "We optimize your property so Google Maps, ChatGPT, and Instagram point high-paying guests directly to your doors.",
+      title: "AI and Search Optimization",
+      desc: "We structure your content so both Google and AI assistants like ChatGPT and Gemini can find, trust, and recommend your property or restaurant.",
       icon: <Sparkles size={20} className="text-purple-500" />,
     },
     {
       num: "05",
-      title: "Monthly Direct Profit Reports",
-      desc: "Every month, you receive a clear, plain-English summary of direct bookings, rooms filled, and exact OTA commission money saved.",
+      title: "Reporting",
+      desc: "Monthly reporting on what actually matters—direct bookings, reservation volume, review growth, and search visibility, not empty vanity metrics.",
       icon: <TrendingUp size={20} className="text-[#2258FF]" />,
     },
   ];
@@ -240,27 +320,27 @@ export default function HospitalityMarketingClient() {
     {
       question: "How much does hospitality digital marketing cost in Nigeria?",
       answer:
-        "Most hotels and restaurants invest between ₦250,000 and ₦650,000 monthly. In most cases, booking just 2 to 3 extra executive suites or filling 5 weekend tables completely covers your monthly investment. Everything after that is pure profit straight into your bank account. We start with a 100% free audit so you know your exact numbers before spending a kobo.",
+        "Pricing depends on property size and scope, but most hotels and restaurants invest between ₦250,000 and ₦1,500,000 monthly for a full digital marketing program, comparable to the 3-5% of revenue that hospitality businesses typically allocate to marketing globally. We'll give you an exact quote after a free audit of your current presence.",
     },
     {
-      question: "How soon will we see more direct bookings?",
+      question: "How long before I see results?",
       answer:
-        "You will see immediate improvements in Google Maps calls, WhatsApp inquiries, and fresh 5-star reviews within the first 30 to 45 days. By month 2 to 3, direct bookings start meaningfully replacing third-party OTA bookings as your local ranking climbs.",
+        "Google Business Profile and review improvements can show movement within 4 to 6 weeks. Meaningful shifts in direct bookings and organic reservation volume typically build over 3 to 6 months of consistent execution.",
     },
     {
-      question: "Will Nigerian guests really pay directly on our website instead of calling front desk?",
+      question: "Do you work with both hotels and restaurants, or just one?",
       answer:
-        "Yes, when it is easy and safe. When guests see clear room photos, straightforward prices, and instant Paystack or Flutterwave payment options (card, bank transfer, or USSD), they happily pay upfront to lock in their room. For guests who still prefer chatting, our 1-tap WhatsApp button connects them instantly with their room details pre-selected.",
+        "Both. The core discipline—local search, reviews, direct booking or reservation conversion, and AI visibility—overlaps significantly, and we tailor the specific tactics to whichever business you run.",
     },
     {
-      question: "Can you really help us reduce what we pay to Booking.com?",
+      question: "Can you help us reduce our dependence on booking platforms like Booking.com?",
       answer:
-        "Yes, that is our core mission. When your hotel ranks #1 on Google Maps and your website loads fast with clear direct booking perks (like free breakfast or late checkout), guests book directly with you. Our hotel clients cut OTA reliance by an average of 18% in their first year—saving millions in commission fees.",
+        "Yes, this is one of our main goals for hotel clients. A clear direct booking plan, simple booking steps on mobile phones, and verified guest reviews allow hotels to cut down reliance on booking sites and keep their profits.",
     },
     {
-      question: "Do you work with independent hotels and standalone restaurants?",
+      question: "Do you work with independent properties or only large hotel chains?",
       answer:
-        "Yes! Over 85% of our clients are independent boutique hotels, serviced apartments, and standalone restaurants in Lagos, Abuja, and Port Harcourt. These are the exact businesses that suffer most from heavy OTA commissions and benefit immediately from direct bookings.",
+        "We work primarily with independent hotels and restaurants—the businesses that benefit most from focused, hands-on strategy rather than a templated enterprise approach.",
     },
   ];
 
@@ -311,12 +391,12 @@ export default function HospitalityMarketingClient() {
             </span>
           </div>
 
-          {/* Centered H1 Headline with Artistic Accent */}
-          <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-black tracking-tight leading-[1.08] mb-6 text-slate-900 max-w-5xl mx-auto">
-            Turn Empty Rooms & Tables Into{" "}
+          {/* Centered H1 Headline - Main Target Keyword */}
+          <h1 className="text-3xl sm:text-5xl lg:text-[62px] font-black tracking-tight leading-[1.12] mb-4 sm:mb-5 text-slate-900 max-w-5xl mx-auto">
+            Hospitality Digital Marketing{" "}
             <span className="relative inline-block mt-1 sm:mt-0">
               <span className="bg-gradient-to-r from-[#2258FF] via-[#1a4de0] to-[#1040e6] bg-clip-text text-transparent">
-                High-Margin Direct Bookings
+                Agency in Nigeria
               </span>
               {/* Hand-drawn luxury curve accent in amber */}
               <svg
@@ -336,17 +416,21 @@ export default function HospitalityMarketingClient() {
             </span>
           </h1>
 
-          {/* Subtitle & Value Proposition */}
-          <p className="text-slate-700 text-lg sm:text-xl leading-relaxed mb-4 font-medium max-w-3xl mx-auto">
-            You didn't invest millions into building executive suites or an exceptional kitchen just to watch diesel burn while your rooms sit half-empty, or surrender 20% commission on every guest to Booking.com.
+          {/* Value Subheadline (H2): Turn Empty Rooms and Empty Tables Into Bookings */}
+          <h2 className="text-xl sm:text-3xl lg:text-[32px] font-extrabold text-slate-800 tracking-tight leading-snug mb-5 max-w-4xl mx-auto">
+            Turn Empty Rooms & Empty Tables Into{" "}
+            <span className="text-[#2258FF] font-black">
+              Confirmed Direct Bookings
+            </span>
+          </h2>
+
+          {/* Subtitle & Value Proposition - Clean & Concise */}
+          <p className="text-slate-700 text-base sm:text-lg lg:text-xl leading-relaxed mb-6 font-medium max-w-3xl mx-auto">
+            Nigeria's hospitality digital marketing agency, built to turn searches into bookings for hotels and restaurants across Lagos, Abuja, Port Harcourt, and beyond.
           </p>
 
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl mx-auto font-normal">
-            <strong className="text-slate-900 font-black">ChyWeb Academy</strong> builds the simple digital engine that turns local Google searches, corporate travelers, and weekend diners into direct, upfront-paid bookings straight into your account—with zero middleman cuts.
-          </p>
-
-          {/* Centered Action CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-8">
+          {/* Centered Action CTAs - PUSHED UP IMMEDIATELY BELOW LEAD */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-4">
             <button
               onClick={() => setIsModalOpen(true)}
               className="w-full sm:w-auto px-9 py-4 rounded-2xl bg-gradient-to-r from-[#2258FF] to-[#1442e6] hover:from-[#1b4ae8] hover:to-[#0d34c2] text-white font-black text-base shadow-[0_14px_34px_rgba(34,88,255,0.36)] transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(34,88,255,0.45)] flex items-center justify-center gap-2.5 group cursor-pointer"
@@ -367,26 +451,29 @@ export default function HospitalityMarketingClient() {
             </a>
           </div>
 
-          {/* Micro-Trust Badges with Modern Glass Capsule Styling */}
+          <div className="text-xs text-slate-500 font-medium mb-8">
+            Free 48-hour property diagnosis • Zero obligation • Direct strategy line
+          </div>
+
+          {/* Micro-Trust Badges with Verified Client Benchmarks */}
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-slate-700 font-bold mb-12">
             <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-slate-200/90 shadow-xs">
-              <ShieldCheck size={16} className="text-[#2258FF]" />
-              <span>0% Commission On Direct Guests</span>
+              <TrendingUp size={16} className="text-[#2258FF]" />
+              <span>18% Average Drop in OTA Dependency for Hotels</span>
             </div>
             <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-slate-200/90 shadow-xs">
-              <Zap size={16} className="text-amber-500" />
-              <span>60-Day Direct Traction Guarantee</span>
+              <Utensils size={16} className="text-amber-500" />
+              <span>2.4x More Bookings for Restaurants</span>
             </div>
             <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-slate-200/90 shadow-xs">
-              <CheckCircle2 size={16} className="text-emerald-500" />
-              <span>Instant Card & Bank Transfer Payments</span>
-            </div>
+              <ShieldCheck size={16} className="text-emerald-500" />
+              <span>Free Property Audit • Zero Obligation</span>
           </div>
 
           {/* Centered Single-Column Visual Showcase: Luxury Digital Terminal Frame */}
-          <div className="w-full max-w-5xl rounded-[32px] overflow-hidden shadow-[0_25px_65px_rgba(11,15,25,0.16)] border-4 border-white/90 relative group bg-slate-950">
+          <div className="w-full max-w-5xl rounded-[32px] overflow-hidden shadow-[0_25px_65px_rgba(34,88,255,0.18)] border-4 border-white/90 relative group bg-[#1040E6]">
             {/* High-End App/Browser Control Bar */}
-            <div className="bg-slate-900/95 backdrop-blur-md px-4 sm:px-6 py-3 border-b border-white/10 flex items-center justify-between z-20 relative">
+            <div className="bg-[#2258FF] px-4 sm:px-6 py-3 border-b border-white/20 flex items-center justify-between z-20 relative">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
                 <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
@@ -409,7 +496,7 @@ export default function HospitalityMarketingClient() {
                 alt="Happy Guests Relaxing at Luxury Boutique Hotel Resort in Lagos"
                 className="w-full h-[380px] sm:h-[500px] object-cover group-hover:scale-105 transition-transform duration-1000 opacity-95"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/25 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1e64]/95 via-[#0a1e64]/25 to-transparent pointer-events-none" />
 
               {/* Dynamic Live Booking Alert Notification */}
               <AnimatePresence mode="wait">
@@ -419,7 +506,7 @@ export default function HospitalityMarketingClient() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 20, scale: 0.96 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="absolute top-4 left-4 right-4 sm:left-6 sm:right-auto bg-slate-900/90 backdrop-blur-xl border border-white/25 rounded-2xl p-4 shadow-[0_15px_35px_rgba(0,0,0,0.4)] flex items-center gap-3.5 text-white max-w-md text-left z-20"
+                  className="absolute top-4 left-4 right-4 sm:left-6 sm:right-auto bg-[#2258FF]/95 backdrop-blur-xl border border-white/30 rounded-2xl p-4 shadow-[0_15px_35px_rgba(34,88,255,0.35)] flex items-center gap-3.5 text-white max-w-md text-left z-20"
                 >
                   <div className="relative flex-shrink-0">
                     <div className="w-3.5 h-3.5 rounded-full bg-emerald-400 animate-ping" />
@@ -460,12 +547,12 @@ export default function HospitalityMarketingClient() {
               </div>
 
               {/* Floating Mini Growth Indicator (Bottom Right of Media) */}
-              <div className="hidden md:flex absolute bottom-28 right-6 bg-slate-900/85 backdrop-blur-md border border-white/20 text-white rounded-2xl p-3 shadow-xl items-center gap-2.5 z-20 text-left">
+              <div className="hidden md:flex absolute bottom-28 right-6 bg-[#2258FF]/95 backdrop-blur-md border border-white/30 text-white rounded-2xl p-3 shadow-xl items-center gap-2.5 z-20 text-left">
                 <div className="w-8 h-8 rounded-xl bg-[#2258FF]/30 border border-[#2258FF]/50 flex items-center justify-center text-[#2258FF]">
                   <TrendingUp size={16} className="text-blue-300" />
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-400 font-bold block uppercase">Direct Traffic Yield</span>
+                  <span className="text-[10px] text-slate-400 font-bold block uppercase">Direct Booking Growth</span>
                   <strong className="text-xs font-black text-emerald-400">+2.4x More Direct Bookings</strong>
                 </div>
               </div>
@@ -475,12 +562,12 @@ export default function HospitalityMarketingClient() {
             <div className="bg-white/95 backdrop-blur-xl border-t border-slate-200/80 p-5 sm:p-6 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 items-center text-left text-slate-900 shadow-xl z-20 relative">
               <div className="p-3 rounded-2xl bg-blue-50/60 border border-blue-100/80">
                 <span className="text-[10px] text-slate-500 font-black block uppercase tracking-wider mb-0.5">
-                  Direct Margin Unlocked
+                  Commissions Saved
                 </span>
                 <strong className="text-base sm:text-xl font-black text-[#2258FF]">
                   ₦{otaSavings.toLocaleString("en-NG")}
                 </strong>
-                <span className="text-[10px] text-blue-600 font-bold block mt-0.5">OTA commission retained</span>
+                <span className="text-[10px] text-blue-600 font-bold block mt-0.5">Kept in your account</span>
               </div>
 
               <div className="p-3 rounded-2xl bg-emerald-50/60 border border-emerald-100/80">
@@ -515,24 +602,226 @@ export default function HospitalityMarketingClient() {
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+      {/* =========================================================================
+          SECTION: The Reality of Hospitality Guest Decisions (Designed Below Hero)
+      ========================================================================= */}
+      <section className="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+        <div className="p-8 sm:p-12 lg:p-14 rounded-[36px] bg-white/95 backdrop-blur-xl border-2 border-slate-200/90 shadow-[0_20px_50px_rgba(11,15,25,0.05)]">
+          <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
+            <span className="px-4 py-1.5 rounded-full bg-[#2258FF]/10 border border-[#2258FF]/20 text-[#2258FF] font-black text-xs uppercase tracking-wider mb-3 inline-block">
+              Built to Turn Searches Into Bookings
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 leading-tight mb-4">
+              Your Guests Already Decided Online Before They Ever Walk In or Call
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Nigeria's hospitality digital marketing agency, built to turn searches into bookings for hotels and restaurants across Lagos, Abuja, Port Harcourt, and beyond.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* The Leak / The Hidden Risk */}
+            <div className="lg:col-span-6 p-7 sm:p-9 rounded-[30px] bg-gradient-to-br from-rose-50/40 via-slate-50 to-amber-50/40 border border-slate-200/90 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-rose-100 border border-rose-200 text-rose-600 flex items-center justify-center mb-5 font-black text-lg shadow-xs">
+                  ⚠️
+                </div>
+                <span className="text-xs font-black uppercase tracking-wider text-rose-700 block mb-2">
+                  The Hidden Leak
+                </span>
+                <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-4 leading-snug">
+                  The Decision Is Lost Before Your Rooms or Food Get a Chance
+                </h3>
+                <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+                  Your guests already decided online—on Google, Instagram, and AI assistants—before they ever called your front desk or walked into your lobby. A slow website, an outdated Google Business Profile, or thin reviews loses that decision before your food or rooms get a chance.
+                </p>
+              </div>
+
+              <div className="space-y-3 pt-5 border-t border-slate-200/80 text-xs sm:text-sm text-slate-700">
+                <div className="flex items-center gap-2.5 font-medium text-rose-800">
+                  <span className="w-5 h-5 rounded-full bg-rose-100 flex items-center justify-center text-xs font-bold text-rose-600 flex-shrink-0">✕</span>
+                  <span>Slow mobile loading loses 60%+ of Nigerian travelers instantly</span>
+                </div>
+                <div className="flex items-center gap-2.5 font-medium text-rose-800">
+                  <span className="w-5 h-5 rounded-full bg-rose-100 flex items-center justify-center text-xs font-bold text-rose-600 flex-shrink-0">✕</span>
+                  <span>Outdated Google hours, missing menus, or unaddressed bad reviews</span>
+                </div>
+                <div className="flex items-center gap-2.5 font-medium text-rose-800">
+                  <span className="w-5 h-5 rounded-full bg-rose-100 flex items-center justify-center text-xs font-bold text-rose-600 flex-shrink-0">✕</span>
+                  <span>No direct booking engine, surrendering 20% to Booking.com</span>
+                </div>
+              </div>
+            </div>
+
+            {/* The ChyWeb Systematic Fix */}
+            <div className="lg:col-span-6 p-7 sm:p-9 rounded-[30px] relative overflow-hidden shadow-xl flex flex-col justify-between group border border-blue-400/40 text-white">
+              {/* High-visibility Photographic Backdrop */}
+              <img
+                src="/images/luxury_resort_lagos.jpg"
+                alt="Luxury Resort Lagos"
+                className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000"
+              />
+              {/* High-Contrast Dual-Layer Blue Gradient Scrim */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0a1e64]/95 via-[#1040E6]/88 to-[#2258FF]/82 backdrop-blur-[0.5px]" />
+              <div className="absolute inset-0 bg-[#0a1e64]/20" />
+              <div className="absolute top-0 right-0 w-72 h-72 bg-amber-400/15 rounded-full blur-3xl pointer-events-none" />
+
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-2xl bg-white/15 border border-white/25 text-amber-300 flex items-center justify-center mb-5 font-black text-lg shadow-xs backdrop-blur-md">
+                  <Sparkles size={22} className="text-amber-300" />
+                </div>
+                <span className="text-xs font-black uppercase tracking-wider text-amber-300 block mb-2 drop-shadow-sm">
+                  The Complete System
+                </span>
+                <h3 className="text-xl sm:text-2xl font-black text-white !text-white mb-4 leading-snug drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]" style={{ color: "#ffffff" }}>
+                  Built for How Hospitality Guests Actually Search and Book
+                </h3>
+                <p className="text-blue-100 text-sm sm:text-base leading-relaxed mb-6 font-medium drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
+                  We fix that: web design, SEO, Google Business optimization, social media, appetizing content, reputation management, and high-intent paid ads—built specifically for how hospitality guests actually search and book in Nigeria.
+                </p>
+              </div>
+
+              <div className="space-y-3 pt-5 border-t border-white/15 text-xs sm:text-sm text-blue-100 relative z-10">
+                <div className="flex items-center gap-2.5 font-semibold text-white">
+                  <CheckCircle2 size={18} className="text-emerald-400 flex-shrink-0" />
+                  <span>Fast 20-second mobile reservations & instant card/transfer payment</span>
+                </div>
+                <div className="flex items-center gap-2.5 font-semibold text-white">
+                  <CheckCircle2 size={18} className="text-emerald-400 flex-shrink-0" />
+                  <span>Top 3 Google Maps rank & AI travel assistant recommendations</span>
+                </div>
+                <div className="flex items-center gap-2.5 font-semibold text-white">
+                  <CheckCircle2 size={18} className="text-emerald-400 flex-shrink-0" />
+                  <span>18% average reduction in OTA commission loss for hotels</span>
+                </div>
+
+                <div className="pt-4">
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="w-full py-3.5 px-6 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-900 font-black text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <span>Claim Your Free 48-Hour Property Audit</span>
+                    <ArrowRight size={16} />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* The Uncomfortable Truth Section: The Leaking Funnel vs The ChyWeb Engine */}
+      {/* Section 2: Why Hospitality Marketing Needs a Specialist (H2) */}
       <section className="py-16 sm:py-24 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <span className="px-4 py-1.5 rounded-full bg-[#2258FF]/10 border border-[#2258FF]/20 text-[#2258FF] font-black text-xs uppercase tracking-wider mb-4 inline-block">
-            The Nigerian Hospitality Reality
+            The Specialist Difference
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-slate-900 leading-tight">
-            Your Guests Already Decided Online. <br />
-            <span className="text-[#2258FF]">Is Your Property Showing Up?</span>
+            Why Hospitality Marketing Needs a Specialist.
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
-            Here is the plain truth: by the time a guest calls your front desk or walks into your lobby, they have already made up their mind on their phone. Nigerian travelers and diners check Google reviews, inspect photos, and compare prices first. If your property is hard to find or confusing to book, they pick your competitor in seconds.
-          </p>
         </div>
 
-        {/* 3 Hard Data Stats Bento with Brand Styling */}
+        {/* 2-Card Layout: Generic Agency Trap vs. Hospitality Rhythm */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch mb-12 sm:mb-16">
+          {/* Card 1: The Generic Agency Trap */}
+          <div className="lg:col-span-5 rounded-3xl relative overflow-hidden shadow-xl border border-blue-400/40 group p-7 sm:p-9 flex flex-col justify-between text-white">
+            {/* High-visibility Photographic Backdrop */}
+            <img
+              src="/images/hotel_lobby_lagos.jpg"
+              alt="Boutique Hotel Lobby Lagos"
+              className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000"
+            />
+            {/* High-Contrast Dual-Layer Blue Gradient Scrim */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0a1e64]/95 via-[#1040E6]/88 to-[#2258FF]/82 backdrop-blur-[0.5px]" />
+            <div className="absolute inset-0 bg-[#0a1e64]/25" />
+            <div className="absolute -right-8 -bottom-8 w-44 h-44 bg-white/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-amber-300 text-xs font-bold uppercase tracking-wider mb-5 border border-white/20 backdrop-blur-md">
+                <span>The Generic Agency Trap</span>
+              </div>
+              <p className="text-lg sm:text-xl font-medium leading-relaxed text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+                Marketing a hotel or restaurant is <span className="text-amber-300 font-black underline decoration-white decoration-2 underline-offset-4">not the same job</span> as marketing a law firm or a retail store, and treating it that way is how most Nigerian hospitality businesses end up with a pretty website that doesn&apos;t actually drive bookings.
+              </p>
+            </div>
+            <div className="mt-8 pt-5 border-t border-white/20 flex items-center gap-3 text-blue-100 text-xs font-semibold relative z-10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
+              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+              <span>Aesthetics alone don&apos;t fill empty rooms or tables.</span>
+            </div>
+          </div>
+
+          {/* Card 2: Hospitality Rhythm Breakdown */}
+          <div className="lg:col-span-7 rounded-3xl bg-white p-7 sm:p-9 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between gap-4 mb-4">
+                <span className="text-xs font-black uppercase tracking-wider text-[#2258FF] bg-[#2258FF]/10 px-3 py-1 rounded-full border border-[#2258FF]/20">
+                  The Hospitality Rhythm
+                </span>
+                <span className="text-xs text-slate-500 font-medium hidden sm:inline-block">Fast guest booking cycle</span>
+              </div>
+
+              <p className="text-slate-800 font-bold text-base sm:text-lg mb-5">
+                Hospitality has its own rhythm:
+              </p>
+
+              {/* 4 Rhythm Pillars */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+                <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                  <div className="w-8 h-8 rounded-xl bg-blue-100 text-[#2258FF] flex items-center justify-center shrink-0 font-bold text-sm">
+                    <CalendarCheck size={16} />
+                  </div>
+                  <div>
+                    <div className="text-xs font-black text-slate-900 uppercase tracking-wide">Seasonal Demand</div>
+                    <div className="text-xs text-slate-500 mt-0.5">Peak holidays, retreats &amp; weekend rushes</div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                  <div className="w-8 h-8 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                    <Zap size={16} />
+                  </div>
+                  <div>
+                    <div className="text-xs font-black text-slate-900 uppercase tracking-wide">Last-Minute Decisions</div>
+                    <div className="text-xs text-slate-500 mt-0.5">Same-day room stays &amp; tonight&apos;s dinners</div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                  <div className="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                    <Star size={16} />
+                  </div>
+                  <div>
+                    <div className="text-xs font-black text-slate-900 uppercase tracking-wide">Review-Driven Trust</div>
+                    <div className="text-xs text-slate-500 mt-0.5">Google Maps rating &amp; verified guest trust</div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-purple-50 border border-purple-100">
+                  <div className="w-8 h-8 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                    <Clock size={16} />
+                  </div>
+                  <div>
+                    <div className="text-xs font-black text-slate-900 uppercase tracking-wide">Fast Guest Journey</div>
+                    <div className="text-xs text-slate-500 mt-0.5">Search → book → arrive in one afternoon</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Journey flow callout */}
+              <div className="p-3.5 rounded-2xl bg-[#2258FF]/5 border border-[#2258FF]/15 text-xs text-slate-700 font-medium mb-5">
+                <span className="font-bold text-slate-900">Moving Fast Across Apps:</span> Often across WhatsApp, Instagram, Google Maps, and your website booking all in the same afternoon.
+              </div>
+
+              <p className="text-slate-600 text-sm leading-relaxed">
+                A hospitality digital marketing agency in Nigeria built specifically for hotels and restaurants understands this rhythm and builds marketing that matches it, not a generic campaign borrowed from an unrelated industry.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* 3 Hard Data Proof Cards Bento with Brand Styling */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-16 sm:mb-20">
           <div className="p-7 sm:p-9 lg:p-10 rounded-[32px] bg-white border border-slate-200/90 shadow-[0_4px_20px_rgba(11,15,25,0.04)] hover:shadow-[0_16px_36px_rgba(34,88,255,0.12)] hover:border-[#2258FF] transition-all duration-300 relative group overflow-hidden flex flex-col justify-start">
             <div className="w-14 h-1.5 bg-[#2258FF] rounded-full mb-6 sm:mb-7" />
@@ -541,7 +830,7 @@ export default function HospitalityMarketingClient() {
             </div>
             <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-3 sm:mb-4 leading-snug">Saved On Every Booking</h3>
             <p className="text-sm sm:text-[15px] text-slate-600 leading-relaxed">
-              Every direct booking saves you 18% to 25% that would otherwise go straight to Booking.com or Expedia. That saved money stays right in your bank account.
+              Every direct booking saves you the 15% to 25% commission fee that would otherwise go straight to Booking.com or Expedia. That saved cash flow stays right in your property's account.
             </p>
           </div>
 
@@ -550,9 +839,9 @@ export default function HospitalityMarketingClient() {
             <div className="inline-flex items-center justify-center px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-200 font-black text-2xl sm:text-3xl lg:text-4xl mb-6 w-fit group-hover:scale-105 transition-transform tracking-tight">
               2.4x
             </div>
-            <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-3 sm:mb-4 leading-snug">More Direct Dining Covers</h3>
+            <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-3 sm:mb-4 leading-snug">More Dining Reservations</h3>
             <p className="text-sm sm:text-[15px] text-slate-600 leading-relaxed">
-              Restaurants and rooftop lounges that rank in the top 3 on Google Maps see more than double the table reservations from local food lovers and weekend groups.
+              Restaurants and lounges that dominate Google Maps "near me" searches and offer fast 20-second reservation flows see 2.4x more dining covers and weekend table bookings.
             </p>
           </div>
 
@@ -563,94 +852,81 @@ export default function HospitalityMarketingClient() {
             </div>
             <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-3 sm:mb-4 leading-snug">Guests Read Reviews First</h3>
             <p className="text-sm sm:text-[15px] text-slate-600 leading-relaxed">
-              85% of guests will never book a hotel or restaurant with poor or outdated reviews. An automated 5-star review flow locks in trust before guests even call you.
+              Over 85% of guests will never book a room or table with poor or outdated reviews. An automated 5-star review flow locks in trust before guests ever pick up the phone.
             </p>
           </div>
         </div>
 
-        {/* Specialist Advantage Banner - Engaging Visual Layout */}
-        <div className="p-8 sm:p-12 rounded-[36px] bg-white border-2 border-[#2258FF]/20 shadow-[0_20px_50px_rgba(34,88,255,0.08)] relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7">
-              <span className="px-3.5 py-1.5 rounded-full bg-[#2258FF]/10 border border-[#2258FF]/20 text-[#2258FF] font-black text-xs uppercase tracking-widest inline-block mb-4">
-                The Specialist Advantage
-              </span>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 mb-4 leading-tight">
-                Why Hospitality Marketing Needs a Specialist, Not a General Web Agency
-              </h3>
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
-                Marketing a hotel or restaurant is nothing like marketing a law firm or clothing boutique. Treating it like a normal business is why so many Nigerian properties have beautiful websites that bring zero phone calls and zero room bookings.
-              </p>
+        {/* Section 3: Hospitality Digital Marketing Services in Nigeria (H2) */}
+        <div className="pt-10 mb-20">
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <span className="px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 font-black text-xs uppercase tracking-wider mb-4 inline-block">
+              Everything You Need
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-black text-slate-900 leading-tight mb-4">
+              Hospitality Digital Marketing Services in Nigeria
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+              Seven focused marketing services built specifically around how hotel guests, business travelers, and diners find and book rooms and tables across Nigeria.
+            </p>
+          </div>
 
-              <div className="space-y-3">
-                <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80">
-                  <div className="w-9 h-9 rounded-xl bg-blue-100 text-[#2258FF] flex items-center justify-center flex-shrink-0">
-                    <Clock size={18} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            {coreServices.map((service, idx) => (
+              <div
+                key={idx}
+                className="p-5 sm:p-6 rounded-[26px] bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(11,15,25,0.03)] hover:shadow-[0_12px_28px_rgba(34,88,255,0.1)] hover:border-[#2258FF]/50 transition-all duration-300 flex flex-col justify-between group overflow-hidden"
+              >
+                <div>
+                  {service.image && (
+                    <div className="relative h-32 sm:h-36 -mx-5 -mt-5 sm:-mx-6 sm:-mt-6 mb-4 overflow-hidden">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a1e64]/75 via-[#0a1e64]/15 to-transparent" />
+                      <span className="absolute bottom-2.5 left-3 text-[9px] sm:text-[10px] font-black text-amber-300 bg-black/60 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/20">
+                        {service.imageLabel}
+                      </span>
+                    </div>
+                  )}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-9 h-9 rounded-xl bg-[#2258FF]/10 border border-[#2258FF]/20 flex items-center justify-center text-[#2258FF] group-hover:bg-[#2258FF] group-hover:text-white transition-colors duration-300">
+                      {service.icon}
+                    </div>
+                    <span className="text-[9px] sm:text-[10px] font-black text-[#2258FF] uppercase tracking-wider bg-[#2258FF]/10 px-2.5 py-0.5 rounded-full">
+                      {service.badge}
+                    </span>
                   </div>
-                  <div>
-                    <strong className="text-xs sm:text-sm font-black text-slate-900 block">Fast 20-Second Decisions</strong>
-                    <span className="text-xs text-slate-600">Guests move from Google search to WhatsApp chat to confirmed booking in minutes when the steps are simple.</span>
+                  <h3 className="text-base sm:text-lg font-black text-slate-900 mb-2 leading-snug">{service.title}</h3>
+                  <div className="text-xs text-slate-600 leading-relaxed mb-4 font-normal">
+                    {service.desc}
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80">
-                  <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center flex-shrink-0">
-                    <Utensils size={18} />
-                  </div>
-                  <div>
-                    <strong className="text-xs sm:text-sm font-black text-slate-900 block">Sensory Food & Room Trust</strong>
-                    <span className="text-xs text-slate-600">Appetizing dishes, pristine suites, and clear pricing trigger instant booking desire in 85% of guests.</span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80">
-                  <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                    <TrendingUp size={18} />
-                  </div>
-                  <div>
-                    <strong className="text-xs sm:text-sm font-black text-slate-900 block">Keeping Your Full Profit</strong>
-                    <span className="text-xs text-slate-600">Eliminate the 18% to 25% middleman commission fee currently lost to Booking.com and foreign aggregators.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5 relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
-                <img
-                  src="/images/vibrant_dining_restaurant.jpg"
-                  alt="Vibrant restaurant dining floor in Lekki Lagos"
-                  className="w-full h-[380px] object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-6 text-white">
-                  <span className="text-xs font-black text-amber-300 uppercase tracking-wider mb-1">
-                    Direct Booking Flywheel
-                  </span>
-                  <strong className="text-lg font-black leading-tight">
-                    "2.4x More Table Bookings & 0% OTA Commissions"
-                  </strong>
-                  <span className="text-xs text-slate-200 mt-1">
-                    Lagos, Abuja & Port Harcourt hospitality properties
-                  </span>
+                <div className="pt-3 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-slate-700">
+                  <CheckCircle2 size={15} className="text-emerald-500 flex-shrink-0" />
+                  <span className="truncate">{service.highlight}</span>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* What We Do Tabs: Hotels vs Restaurants */}
+      {/* Section 4: How These Services Come Together for Hotels & Restaurants */}
       <section className="py-20 bg-gradient-to-b from-[#F0F1E8]/60 via-[#F5F4F0] to-[#F5F4F0] border-y border-slate-200/80">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="text-center max-w-3xl mx-auto mb-10">
             <span className="px-4 py-1.5 rounded-full bg-[#2258FF]/10 text-[#2258FF] font-black text-xs uppercase tracking-wider mb-4 inline-block">
-              Dedicated Solutions
+              How It All Works Together
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
-              Engineered Specifically for Your Venue
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4">
+              How These Services Come Together
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-2">
-              Toggle between our dedicated frameworks for hotels and restaurants.
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              See how your website, Google Maps, reviews, and ads connect to turn online searchers into direct paying guests.
             </p>
 
             {/* Toggle Tabs */}
@@ -664,7 +940,7 @@ export default function HospitalityMarketingClient() {
                 }`}
               >
                 <Hotel size={16} />
-                <span>What We Do for Hotels</span>
+                <span>How Services Work for Hotels</span>
               </button>
               <button
                 onClick={() => setActiveTab("restaurants")}
@@ -675,8 +951,208 @@ export default function HospitalityMarketingClient() {
                 }`}
               >
                 <Utensils size={16} />
-                <span>What We Do for Restaurants</span>
+                <span>How Services Work for Restaurants</span>
               </button>
+            </div>
+          </div>
+
+          {/* Detailed Narrative Card with Engineered Architecture Layout */}
+          <div className="mb-12 p-6 sm:p-10 lg:p-12 rounded-[36px] bg-white border border-slate-200/90 shadow-xl relative overflow-hidden">
+            {/* Ambient subtle glow */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50/60 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="relative z-10">
+              {/* Header Badge & Title */}
+              <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+                <div>
+                  <span className="px-3.5 py-1.5 rounded-full bg-[#2258FF]/10 text-[#2258FF] font-black text-xs uppercase tracking-wider mb-2.5 inline-block">
+                    {activeTab === "hotels" ? "🏨 How We Fill Hotel Rooms" : "🍷 How We Pack Dining Tables"}
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
+                    {activeTab === "hotels"
+                      ? "How These Services Come Together for Hotels"
+                      : "How These Services Come Together for Restaurants"}
+                  </h3>
+                </div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs sm:text-sm font-black">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>
+                    {activeTab === "hotels"
+                      ? "18% Drop in Booking Site Fees"
+                      : "2.4x More Direct Table Bookings"}
+                  </span>
+                </div>
+              </div>
+
+              {/* Main Core Strategy Highlight Box */}
+              <div className="p-6 sm:p-8 rounded-3xl relative overflow-hidden shadow-xl border border-blue-400/30 mb-8 text-white group">
+                {/* High-visibility Photographic Backdrop */}
+                <img
+                  src={activeTab === "hotels" ? "/images/hotel_lobby_lagos.jpg" : "/images/rooftop_dining_lounge.jpg"}
+                  alt="Hospitality Marketing Engine"
+                  className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000"
+                />
+                {/* High-Contrast Dual-Layer Blue Gradient Scrim */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0a1e64]/95 via-[#1040E6]/88 to-[#2258FF]/82 backdrop-blur-[0.5px]" />
+                <div className="absolute inset-0 bg-[#0a1e64]/20" />
+                <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+                <div className="relative z-10">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                    <span className="text-xs font-black uppercase tracking-wider text-amber-300 bg-white/15 px-3 py-1 rounded-full w-fit border border-white/20 backdrop-blur-md">
+                      {activeTab === "hotels" ? "The Direct Booking Center" : "The Dining Discovery Center"}
+                    </span>
+                    <span className="text-xs text-blue-100 font-semibold drop-shadow-sm">
+                      {activeTab === "hotels" ? "Saving 15%–25% Middleman Fees" : "Turning Local Searches Into Full Tables"}
+                    </span>
+                  </div>
+                  <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-white mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+                    {activeTab === "hotels" ? (
+                      <>
+                        <strong className="text-white font-black">Direct booking strategy sits at the center of everything</strong> for hotel clients. Every booking that comes through an OTA costs you a commission, often <span className="text-amber-300 font-bold underline decoration-white decoration-2 underline-offset-4">15%–25% of the room rate</span>.
+                      </>
+                    ) : (
+                      <>
+                        <strong className="text-white font-black">For restaurants, Google Business optimization and local SEO work together</strong> to win high-intent <span className="text-amber-300 font-bold">&quot;near me&quot;</span> and <span className="text-amber-300 font-bold">&quot;where to eat tonight&quot;</span> searches across your city.
+                      </>
+                    )}
+                  </p>
+                  <p className="text-sm text-blue-100/95 leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
+                    {activeTab === "hotels"
+                      ? "We combine web design, SEO, Google Business optimization, and reputation management specifically to convince guests to book directly with you instead—the same strategy already reducing OTA dependency by an average of 18% for hotels that invest in it properly."
+                      : "Content development and social media turn that local search visibility into actual foot traffic and reservations, while reputation management closes the loop since restaurants live and die by reviews."}
+                  </p>
+                </div>
+              </div>
+
+              {/* 3 Pillars Flow Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+                {activeTab === "hotels" ? (
+                  <>
+                    <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between hover:border-[#2258FF]/50 transition-colors">
+                      <div>
+                        <div className="w-10 h-10 rounded-xl bg-blue-100 text-[#2258FF] flex items-center justify-center font-bold mb-4">
+                          <Globe size={20} />
+                        </div>
+                        <div className="text-xs font-black uppercase tracking-wider text-[#2258FF] mb-1.5">Direct Bookings</div>
+                        <h4 className="text-base font-black text-slate-900 mb-2">Web Design, SEO &amp; Maps</h4>
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                          Convinces guests to book direct with simple checkout, verified reviews, and real-time room availability.
+                        </p>
+                      </div>
+                      <div className="mt-4 pt-3 border-t border-slate-200/60 text-[11px] font-bold text-slate-500">
+                        Keeps 100% of the room rate
+                      </div>
+                    </div>
+
+                    <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between hover:border-amber-400 transition-colors">
+                      <div>
+                        <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold mb-4">
+                          <Zap size={20} />
+                        </div>
+                        <div className="text-xs font-black uppercase tracking-wider text-amber-600 mb-1.5">High-Season &amp; Weekend Ads</div>
+                        <h4 className="text-base font-black text-slate-900 mb-2">Paid Ads &amp; Social Media</h4>
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                          Captures demand at peak decision moments—last-minute weekend stays, corporate retreats, and holiday travel dates.
+                        </p>
+                      </div>
+                      <div className="mt-4 pt-3 border-t border-slate-200/60 text-[11px] font-bold text-slate-500">
+                        Targeted high-intent bookings
+                      </div>
+                    </div>
+
+                    <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between hover:border-purple-400 transition-colors">
+                      <div>
+                        <div className="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center font-bold mb-4">
+                          <Sparkles size={20} />
+                        </div>
+                        <div className="text-xs font-black uppercase tracking-wider text-purple-600 mb-1.5">AI Recommendations</div>
+                        <h4 className="text-base font-black text-slate-900 mb-2">AI Search Visibility</h4>
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                          Ensures your property is understood and recommended by AI systems summarizing hotel options before a guest clicks through.
+                        </p>
+                      </div>
+                      <div className="mt-4 pt-3 border-t border-slate-200/60 text-[11px] font-bold text-slate-500">
+                        Ranked in AI answer summaries
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between hover:border-amber-400 transition-colors">
+                      <div>
+                        <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold mb-4">
+                          <Search size={20} />
+                        </div>
+                        <div className="text-xs font-black uppercase tracking-wider text-amber-600 mb-1.5">Nearby Searches</div>
+                        <h4 className="text-base font-black text-slate-900 mb-2">Google Maps &amp; Local SEO</h4>
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                          Dominates &quot;near me&quot; and neighborhood searches when diners in your city are actively deciding where to eat tonight.
+                        </p>
+                      </div>
+                      <div className="mt-4 pt-3 border-t border-slate-200/60 text-[11px] font-bold text-slate-500">
+                        3x more discovery &amp; phone calls
+                      </div>
+                    </div>
+
+                    <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between hover:border-rose-400 transition-colors">
+                      <div>
+                        <div className="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold mb-4">
+                          <Camera size={20} />
+                        </div>
+                        <div className="text-xs font-black uppercase tracking-wider text-rose-600 mb-1.5">Food Photos &amp; Videos</div>
+                        <h4 className="text-base font-black text-slate-900 mb-2">Content &amp; Social Media</h4>
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                          Mouth-watering photography, reels, and vibe stories that turn social media scrollers into confirmed table bookings.
+                        </p>
+                      </div>
+                      <div className="mt-4 pt-3 border-t border-slate-200/60 text-[11px] font-bold text-slate-500">
+                        Packed weekend &amp; weekday tables
+                      </div>
+                    </div>
+
+                    <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between hover:border-emerald-400 transition-colors">
+                      <div>
+                        <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold mb-4">
+                          <Star size={20} />
+                        </div>
+                        <div className="text-xs font-black uppercase tracking-wider text-emerald-600 mb-1.5">Reviews &amp; Word of Mouth</div>
+                        <h4 className="text-base font-black text-slate-900 mb-2">Reviews &amp; Paid Demand</h4>
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                          Protects 5-star review credibility and runs targeted ads to fill quiet midweek nights and promote new menu launches.
+                        </p>
+                      </div>
+                      <div className="mt-4 pt-3 border-t border-slate-200/60 text-[11px] font-bold text-slate-500">
+                        Steady dining room velocity
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {/* Action Bar */}
+              <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-slate-100">
+                <div className="flex flex-wrap items-center gap-3">
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="px-6 py-3.5 rounded-xl bg-[#2258FF] hover:bg-[#1040e6] text-white font-black text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer"
+                  >
+                    <span>{activeTab === "hotels" ? "Request Hotel Growth Plan" : "Request Restaurant Growth Plan"}</span>
+                    <ArrowRight size={16} />
+                  </button>
+                  <a
+                    href="https://wa.me/2349067623555"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs sm:text-sm transition-all"
+                  >
+                    Chat With Specialist on WhatsApp →
+                  </a>
+                </div>
+                <div className="text-xs text-slate-500 font-semibold flex items-center gap-2">
+                  <ShieldCheck size={16} className="text-emerald-500" />
+                  <span>Custom roadmap for your property • 100% Free</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -687,7 +1163,7 @@ export default function HospitalityMarketingClient() {
               alt={activeTab === "hotels" ? "Luxury Hotel Suite Full Occupancy in Lagos" : "Packed Restaurant in Lagos with Happy Diners"}
               className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent flex flex-col justify-end p-6 sm:p-10 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a1e64]/90 via-[#0a1e64]/40 to-transparent flex flex-col justify-end p-6 sm:p-10 text-white">
               <span className="px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-amber-300 font-black text-xs uppercase tracking-wider w-fit mb-2">
                 {activeTab === "hotels" ? "🏨 Direct Hotel Booking Engine" : "🍷 Vibrant Packed Dining Experience"}
               </span>
@@ -739,11 +1215,11 @@ export default function HospitalityMarketingClient() {
           <span className="px-4 py-1.5 rounded-full bg-[#2258FF]/10 text-[#2258FF] font-black text-xs uppercase tracking-wider mb-4 inline-block">
             Proven Step-By-Step Path
           </span>
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
-            The 5-Step Direct Revenue Framework
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-3">
+            The Framework Behind Everything We Do
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-2">
-            No guesswork, no confusing tech jargon. Just a clear, repeatable path from empty rooms to high-margin direct guest bookings.
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
+            We don't guess. Every hospitality client goes through the same proven process:
           </p>
         </div>
 
@@ -777,7 +1253,7 @@ export default function HospitalityMarketingClient() {
             Experience The Flow
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
-            The Friction-Free Booking Experience Nigerian Guests Love
+            The Fast, Simple Booking Experience Nigerian Guests Love
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2">
             Test the live 20-second reservation flow below. When reserving is this fast on mobile phones, table covers jump by 2.4x and direct room bookings soar.
@@ -804,8 +1280,21 @@ export default function HospitalityMarketingClient() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Story 1 */}
-            <div className="p-8 rounded-[32px] bg-white border-2 border-slate-200 hover:border-[#2258FF] shadow-[0_8px_30px_rgba(34,88,255,0.08)] flex flex-col justify-between relative hover:-translate-y-1 transition-all">
-              <div className="w-12 h-1.5 bg-[#2258FF] rounded-full mb-6" />
+            <div className="p-8 rounded-[32px] bg-white border-2 border-slate-200 hover:border-[#2258FF] shadow-[0_8px_30px_rgba(34,88,255,0.08)] flex flex-col justify-between relative hover:-translate-y-1 transition-all overflow-hidden group">
+              <div className="relative h-44 -mx-8 -mt-8 mb-6 overflow-hidden">
+                <img
+                  src="/images/luxury_hotel_suite.jpg"
+                  alt="Boutique Hotel & Suites Victoria Island"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1e64]/80 via-[#0a1e64]/20 to-transparent" />
+                <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white text-xs">
+                  <span className="font-extrabold text-amber-300">Victoria Island, Lagos</span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-emerald-500 text-white font-black text-[10px]">
+                    Verified Hotelier
+                  </span>
+                </div>
+              </div>
               <div>
                 <div className="flex items-center gap-1 text-amber-500 mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -814,13 +1303,13 @@ export default function HospitalityMarketingClient() {
                   <span className="text-xs font-black text-slate-800 ml-2">Saved ₦3.8M/Month</span>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-700 italic leading-relaxed mb-6 font-medium">
-                  "Before ChyWeb, over 80% of our weekend guests came through Booking.com, taking 22% of our money every month. Within 4 months of ChyWeb setting up our direct booking engine and Google local SEO, 64% of guests began booking directly on our website. That extra ₦3.8M in saved commissions goes straight into our business every single month."
+                  &quot;Before ChyWeb, over 80% of our weekend guests came through Booking.com, taking 22% of our money every month. Within 4 months of ChyWeb setting up our direct booking engine and Google local SEO, 64% of guests began booking directly on our website. That extra ₦3.8M in saved commissions goes straight into our business every single month.&quot;
                 </p>
               </div>
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                 <div>
                   <strong className="text-sm font-extrabold text-slate-900 block">Chief Emeka O.</strong>
-                  <span className="text-xs text-slate-500">Managing Director • Boutique Hotel & Suites, Victoria Island</span>
+                  <span className="text-xs text-slate-500">Managing Director • Boutique Hotel &amp; Suites, Victoria Island</span>
                 </div>
                 <span className="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-extrabold text-[10px]">
                   -19% OTA Fees
@@ -829,8 +1318,21 @@ export default function HospitalityMarketingClient() {
             </div>
 
             {/* Story 2 */}
-            <div className="p-8 rounded-[32px] bg-white border-2 border-slate-200 hover:border-amber-500 shadow-[0_8px_30px_rgba(245,158,11,0.08)] flex flex-col justify-between relative hover:-translate-y-1 transition-all">
-              <div className="w-12 h-1.5 bg-amber-500 rounded-full mb-6" />
+            <div className="p-8 rounded-[32px] bg-white border-2 border-slate-200 hover:border-amber-500 shadow-[0_8px_30px_rgba(245,158,11,0.08)] flex flex-col justify-between relative hover:-translate-y-1 transition-all overflow-hidden group">
+              <div className="relative h-44 -mx-8 -mt-8 mb-6 overflow-hidden">
+                <img
+                  src="/images/rooftop_dining_lounge.jpg"
+                  alt="Continental Lounge Lekki"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1e64]/80 via-[#0a1e64]/20 to-transparent" />
+                <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white text-xs">
+                  <span className="font-extrabold text-amber-300">Lekki Phase 1, Lagos</span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-amber-500 text-white font-black text-[10px]">
+                    Verified Restaurateur
+                  </span>
+                </div>
+              </div>
               <div>
                 <div className="flex items-center gap-1 text-amber-500 mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -839,13 +1341,13 @@ export default function HospitalityMarketingClient() {
                   <span className="text-xs font-black text-slate-800 ml-2">Full Weekday Tables</span>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-700 italic leading-relaxed mb-6 font-medium">
-                  "Our lounge in Lekki was packed on Saturdays, but Tuesdays and Wednesdays were painfully quiet while our generator was running. ChyWeb revamped our Google profile, set up table QR reviews, and ran appetizing menu campaigns. Now we have steady dinner bookings across the entire week!"
+                  &quot;Our lounge in Lekki was packed on Saturdays, but Tuesdays and Wednesdays were painfully quiet while our generator was running. ChyWeb revamped our Google profile, set up table QR reviews, and ran appetizing menu campaigns. Now we have steady dinner bookings across the entire week!&quot;
                 </p>
               </div>
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                 <div>
                   <strong className="text-sm font-extrabold text-slate-900 block">Chef Folake B.</strong>
-                  <span className="text-xs text-slate-500">Head Chef & Owner • Continental Lounge, Lekki</span>
+                  <span className="text-xs text-slate-500">Head Chef &amp; Owner • Continental Lounge, Lekki</span>
                 </div>
                 <span className="px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-extrabold text-[10px]">
                   2.6x Table Bookings
@@ -854,8 +1356,21 @@ export default function HospitalityMarketingClient() {
             </div>
 
             {/* Story 3 */}
-            <div className="p-8 rounded-[32px] bg-white border-2 border-slate-200 hover:border-emerald-500 shadow-[0_8px_30px_rgba(16,185,129,0.08)] flex flex-col justify-between relative hover:-translate-y-1 transition-all">
-              <div className="w-12 h-1.5 bg-emerald-500 rounded-full mb-6" />
+            <div className="p-8 rounded-[32px] bg-white border-2 border-slate-200 hover:border-emerald-500 shadow-[0_8px_30px_rgba(16,185,129,0.08)] flex flex-col justify-between relative hover:-translate-y-1 transition-all overflow-hidden group">
+              <div className="relative h-44 -mx-8 -mt-8 mb-6 overflow-hidden">
+                <img
+                  src="/images/hotel_lobby_lagos.jpg"
+                  alt="Diplomatic Suites Abuja"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1e64]/80 via-[#0a1e64]/20 to-transparent" />
+                <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white text-xs">
+                  <span className="font-extrabold text-amber-300">Maitama, Abuja</span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-blue-600 text-white font-black text-[10px]">
+                    Verified General Manager
+                  </span>
+                </div>
+              </div>
               <div>
                 <div className="flex items-center gap-1 text-amber-500 mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -864,7 +1379,7 @@ export default function HospitalityMarketingClient() {
                   <span className="text-xs font-black text-slate-800 ml-2">#1 In Abuja AI Search</span>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-700 italic leading-relaxed mb-6 font-medium">
-                  "When corporate executives and government consultants search for executive suites in Abuja with fast fiber WiFi and reliable power, our hotel shows up first on Google Maps and ChatGPT. The quality of our corporate guests has never been higher, and they book directly with zero OTA cuts."
+                  &quot;When corporate executives and government consultants search for executive suites in Abuja with fast fiber WiFi and reliable power, our hotel shows up first on Google Maps and ChatGPT. The quality of our corporate guests has never been higher, and they book directly with zero OTA cuts.&quot;
                 </p>
               </div>
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
@@ -956,17 +1471,18 @@ export default function HospitalityMarketingClient() {
         </div>
       </section>
 
-      {/* Why Choose ChyWeb Academy Internal Links */}
+      {/* Section 6: Why Choose ChyWeb Academy as Your Hospitality Digital Marketing Agency in Nigeria */}
       <section className="py-20 max-w-5xl mx-auto px-6">
         <div className="p-10 sm:p-14 rounded-[36px] shadow-[0_20px_50px_rgba(34,88,255,0.22)] border-4 border-white relative overflow-hidden text-center text-white group">
-          {/* Engaging Photographic Backdrop */}
+          {/* High-visibility Photographic Backdrop */}
           <img
             src="/images/luxury_hotel_suite.jpg"
             alt="Luxury Hospitality Architecture"
-            className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 opacity-30"
+            className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000"
           />
-          {/* Royal ChyWeb Blue to Deep Indigo Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#2258FF]/95 via-[#1240e3]/92 to-[#091b5c]/95" />
+          {/* Royal ChyWeb Blue to Deep Indigo Gradient Scrim */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a1e64]/92 via-[#1040E6]/85 to-[#2258FF]/80 backdrop-blur-[0.5px]" />
+          <div className="absolute inset-0 bg-[#0a1e64]/25" />
 
           {/* Ambient Lighting Accents */}
           <div className="absolute top-0 right-0 w-72 h-72 bg-amber-400/20 rounded-full blur-3xl pointer-events-none" />
@@ -976,13 +1492,13 @@ export default function HospitalityMarketingClient() {
           <div className="relative z-10 max-w-3xl mx-auto">
             <span className="px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-amber-300 font-black text-xs uppercase tracking-wider mb-5 inline-flex items-center gap-2 shadow-sm">
               <Sparkles size={13} className="text-amber-300" />
-              Why Partner With ChyWeb Academy
+              Specialized for Hospitality
             </span>
             <h2 className="text-2xl sm:text-4xl font-black text-white !text-white mb-6 leading-tight" style={{ color: "#ffffff" }}>
-              We Are Not a General Agency Adding "Hospitality" as a Side Tab
+              Why Choose ChyWeb Academy as Your Hospitality Digital Marketing Agency in Nigeria
             </h2>
             <p className="text-blue-100 text-sm sm:text-base leading-relaxed mb-6 font-medium">
-              Hotels and restaurants are a dedicated focus area. We bring the same framework we use across our{" "}
+              We're not a general agency that added "hospitality" to a long list of industries we serve. Hotels and restaurants are a focus area, and we bring the same framework we use across{" "}
               <a
                 href="https://chyweb.com.ng/blog/best-ai-seo-agency-in-nigeria-rank-in-ai-overviews"
                 className="text-amber-300 font-black underline hover:text-amber-200 transition-colors"
@@ -994,18 +1510,26 @@ export default function HospitalityMarketingClient() {
                 href="https://chyweb.com.ng/blog/best-aeo-agency-in-nigeria-2026-guide-to-ai-search"
                 className="text-amber-300 font-black underline hover:text-amber-200 transition-colors"
               >
-                Answer Engine Optimization (AEO)
+                answer engine optimization
               </a>{" "}
-              directly into hospitality marketing. Your property won't just be visible on Google—it will be visible everywhere your guests are searching, including the AI assistants shaping travel decisions in 2026.
+              directly into hospitality marketing, so your property isn't just visible on Google, it's visible everywhere your guests are actually searching, including the AI assistants increasingly shaping travel and dining decisions. If you'd rather build this capability on your own team, our{" "}
+              <a
+                href="https://chyweb.com.ng/"
+                className="text-amber-300 font-black underline hover:text-amber-200 transition-colors"
+              >
+                digital marketing training in Nigeria
+              </a>{" "}
+              covers the same fundamentals we apply for clients.
             </p>
 
-            {/* In-House Capability Box with Frosted Glass Styling */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm text-blue-100 max-w-2xl mx-auto">
-              <span>If you'd rather build this capability inside your in-house team, our </span>
-              <Link href="/digital-marketing" className="text-amber-300 font-extrabold underline hover:text-white transition-colors">
-                digital marketing training program
-              </Link>
-              <span> covers the exact same fundamentals we apply for our enterprise clients.</span>
+            <div className="mt-8">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-900 font-black text-base shadow-[0_10px_25px_rgba(245,158,11,0.35)] transition-all hover:scale-105 cursor-pointer inline-flex items-center gap-2"
+              >
+                <span>Book Your Free Strategy Call</span>
+                <ArrowRight size={18} />
+              </button>
             </div>
           </div>
         </div>
@@ -1018,39 +1542,41 @@ export default function HospitalityMarketingClient() {
       />
 
       {/* FAQ Section */}
-      <FaqSection faqs={faqs} title="Frequently Asked Questions — Hospitality Digital Marketing" />
+      <FaqSection faqs={faqs} title="Frequently Asked Questions — Hospitality Digital Marketing Agency in Nigeria" />
 
       {/* Final High-Converting CTA Banner - Engaging Photographic Backdrop */}
       <section className="py-24 max-w-5xl mx-auto px-6 text-center">
-        <div className="p-10 sm:p-16 rounded-[40px] shadow-[0_25px_60px_rgba(34,88,255,0.25)] border-4 border-white relative overflow-hidden text-white">
-          {/* Background Resort Photo */}
+        <div className="p-10 sm:p-16 rounded-[40px] shadow-[0_25px_60px_rgba(34,88,255,0.25)] border-4 border-white relative overflow-hidden text-white group">
+          {/* High-visibility Background Resort Photo */}
           <img
             src="/images/luxury_resort_lagos.jpg"
             alt="Luxury resort pool and guests in Lagos"
-            className="absolute inset-0 w-full h-full object-cover scale-105"
+            className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000"
           />
-          {/* Engaging ChyWeb Royal Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#2258FF]/95 via-[#1040e6]/90 to-blue-950/90" />
+          {/* Engaging ChyWeb Royal Gradient Scrim */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1e64]/92 via-[#1040E6]/84 to-[#2258FF]/80 backdrop-blur-[0.5px]" />
+          <div className="absolute inset-0 bg-[#0a1e64]/25" />
 
           <div className="max-w-2xl mx-auto relative z-10">
             <span className="px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-amber-300 font-black text-xs uppercase tracking-wider mb-6 inline-block">
-              Stop Bleeding Bookings
+              Stop Losing Bookings
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-black mb-6 leading-tight text-white !text-white" style={{ color: "#ffffff" }}>
-              Stop Losing Bookings to Properties With Worse Rooms & Better Marketing
+              Stop Losing Bookings to Properties With Worse Rooms and Better Marketing
             </h2>
             <p className="text-blue-100 text-sm sm:text-base leading-relaxed mb-8 font-medium">
-              Every day your rooms sit half-empty or your tables sit quiet, your generator fuel and staff costs remain the exact same. Meanwhile, rival properties down the road are fully booked simply because they show up first on Google. Let's claim your direct bookings today.
+              Every day your online presence isn't working as hard as your staff is, you're losing guests to a competitor who simply shows up first. Let's fix that.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="w-full sm:w-auto px-10 py-4 rounded-2xl bg-white hover:bg-slate-100 text-[#2258FF] font-black text-base shadow-[0_12px_28px_rgba(0,0,0,0.2)] transition-all cursor-pointer"
+                className="w-full sm:w-auto px-10 py-4 rounded-2xl bg-white hover:bg-slate-100 text-[#2258FF] font-black text-base shadow-[0_12px_28px_rgba(0,0,0,0.2)] transition-all cursor-pointer flex items-center justify-center gap-2"
               >
-                Claim Your Free Strategy Call →
+                <span>Book a Free Strategy Call</span>
+                <ArrowRight size={18} />
               </button>
               <a
-                href="https://wa.me/2349067623555?text=Hello%20ChyWeb%20Academy%2C%20I%20want%20to%20claim%20the%20Free%20Hospitality%20Growth%20Audit!"
+                href="https://wa.me/2349067623555?text=Hello%20ChyWeb%20Academy%2C%20I%20want%20to%20discuss%20hospitality%20marketing%20for%20my%20property."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white/15 hover:bg-white/25 border border-white/30 text-white font-black text-base backdrop-blur-md transition-all"

@@ -167,7 +167,7 @@ export default function HospitalityAuditClient() {
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.12] mb-5">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.12] mb-5">
             Turn Empty Rooms & Tables Into{" "}
             <span className="relative inline-block mt-1 sm:mt-0">
               <span className="bg-gradient-to-r from-[#2258FF] via-[#1a4de0] to-[#1040e6] bg-clip-text text-transparent">
@@ -199,7 +199,7 @@ export default function HospitalityAuditClient() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 mb-20">
           <div className="bg-white border-2 border-slate-200/90 rounded-[32px] sm:rounded-[40px] shadow-[0_30px_90px_rgba(15,23,42,0.12)] overflow-hidden">
             {/* Top Urgency Ribbon */}
-            <div className="bg-gradient-to-r from-slate-950 via-[#1240e3] to-[#2258FF] text-white text-xs sm:text-sm font-black py-3 px-6 flex items-center justify-between border-b border-white/15">
+            <div className="bg-gradient-to-r from-[#0a1e64] via-[#1240e3] to-[#2258FF] text-white text-xs sm:text-sm font-black py-3 px-6 flex items-center justify-between border-b border-white/15">
               <div className="flex items-center gap-2.5">
                 <span className="flex h-2.5 w-2.5 relative">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />

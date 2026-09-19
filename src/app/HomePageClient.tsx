@@ -413,7 +413,7 @@ export default function HomePage() {
             </div>
 
             {/* Widget 2: Floating Student Review Badge */}
-            <div className="absolute -top-4 right-2 w-64 bg-slate-950 border border-slate-800 rounded-2xl p-5 shadow-2xl z-20 text-white animate-float-1">
+            <div className="absolute -top-4 right-2 w-64 bg-[#0a1e64] border border-slate-800 rounded-2xl p-5 shadow-2xl z-20 text-white animate-float-1">
               <div className="flex items-center gap-1 text-yellow-500 mb-2">
                 <Star size={11} fill="currentColor" />
                 <Star size={11} fill="currentColor" />
@@ -721,7 +721,7 @@ export default function HomePage() {
                   <select
                     value={selectedCourse}
                     onChange={(e) => setSelectedCourse(e.target.value)}
-                    className="w-full bg-slate-950 border border-slate-800 text-slate-200 py-3 px-4 rounded-xl text-xs font-bold focus:outline-none focus:border-[#2258FF]"
+                    className="w-full bg-[#0a1e64] border border-slate-800 text-slate-200 py-3 px-4 rounded-xl text-xs font-bold focus:outline-none focus:border-[#2258FF]"
                   >
                     <option value="Digital Marketing Masterclass">Digital Marketing Masterclass (₦150k)</option>
                     <option value="SEO Training Programme">SEO Training Programme (₦100k)</option>
@@ -739,7 +739,7 @@ export default function HomePage() {
                         className={`py-2.5 px-4 rounded-xl text-xs font-bold border transition-all ${
                           selectedMode === mode
                             ? "bg-[#2258FF]/15 border-[#2258FF] text-[#2258FF]"
-                            : "bg-slate-950 border-slate-800 text-slate-400"
+                            : "bg-[#0a1e64] border-slate-800 text-slate-400"
                         }`}
                       >
                         {mode}
@@ -748,7 +748,7 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="bg-slate-950/70 border border-slate-800 rounded-xl p-4 flex justify-between items-center">
+                <div className="bg-[#0a1e64]/70 border border-slate-800 rounded-xl p-4 flex justify-between items-center">
                   <div>
                     <span className="text-[9px] text-slate-500 block uppercase font-mono">Calculated Price</span>
                     <strong className="text-white text-base">
@@ -810,7 +810,7 @@ export default function HomePage() {
             </div>
 
             {/* Step Panel Visual (Right) */}
-            <div className="lg:col-span-6 order-1 lg:order-2 bg-slate-950 border border-slate-800 rounded-[24px] p-8 shadow-2xl text-white relative overflow-hidden">
+            <div className="lg:col-span-6 order-1 lg:order-2 bg-[#0a1e64] border border-slate-800 rounded-[24px] p-8 shadow-2xl text-white relative overflow-hidden">
               <div className="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
                 <span className="text-xs font-bold text-slate-300">Live Campaign Optimizer</span>
                 <span className="text-[9px] bg-green-500/10 text-green-400 py-0.5 px-2.5 rounded font-mono border border-green-500/20">Active Ads</span>

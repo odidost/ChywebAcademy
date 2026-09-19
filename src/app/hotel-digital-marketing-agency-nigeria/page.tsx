@@ -3,9 +3,9 @@ import { getPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata() {
   return getPageMetadata("/hotel-digital-marketing-agency-nigeria", {
-    title: "Digital Marketing Agency for Hotels in Nigeria | Web Design, SEO & Ads | ChyWeb Academy",
+    title: "Digital Marketing Agency for Hotels in Nigeria: Web Design, SEO, Paid Ads & Social Media Under One Roof | ChyWeb Academy",
     description:
-      "Web design, SEO, paid ads, and social media under one roof for hotels in Nigeria. Stop juggling four freelancers and turn empty rooms into profitable direct reservations.",
+      "Nigeria's digital marketing agency for hotels, web design, SEO, paid ads, and social media, run as one strategy, not four disconnected vendors.",
     keywords: [
       "Digital Marketing Agency for Hotels in Nigeria",
       "hotel digital marketing Lagos",

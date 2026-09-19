@@ -5,7 +5,7 @@ export async function generateMetadata() {
   return getPageMetadata("/hospitality-web-designer-nigeria", {
     title: "Hospitality Web Designer in Nigeria | Websites Built to Book | ChyWeb Academy",
     description:
-      "Websites built to book, not just look good. Mobile-first hotel booking engines, sub-second page speed, and seamless PMS integration for Nigerian hotels and restaurants.",
+      "Nigeria's specialist hospitality web designer. Fast, conversion-engineered sites for hotels and restaurants, built to turn browsers into direct bookings.",
     keywords: [
       "Hospitality Web Designer in Nigeria",
       "hotel website designer Lagos",

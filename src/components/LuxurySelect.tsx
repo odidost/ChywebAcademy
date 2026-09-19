@@ -129,7 +129,7 @@ export default function LuxurySelect({
                     className={`w-full px-3 py-2.5 rounded-xl text-left text-xs sm:text-sm font-semibold transition-all flex items-center justify-between cursor-pointer ${
                       isSelected
                         ? "bg-blue-50/90 text-[#2258FF] font-black border border-blue-100"
-                        : "text-slate-800 hover:bg-slate-100/80 hover:text-slate-950"
+                        : "text-slate-800 hover:bg-slate-100/80 hover:text-[#2258FF]"
                     }`}
                   >
                     <span className="truncate pr-2">{opt.label}</span>

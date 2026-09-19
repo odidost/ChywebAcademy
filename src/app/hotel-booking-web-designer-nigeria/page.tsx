@@ -3,9 +3,9 @@ import { getPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata() {
   return getPageMetadata("/hotel-booking-web-designer-nigeria", {
-    title: "Hotel Booking Web Designer in Nigeria | High-Converting Reservation Systems | ChyWeb Academy",
+    title: "Hotel Booking Web Designer in Nigeria: Websites Engineered to Turn Searches Into Confirmed Reservations | ChyWeb Academy",
     description:
-      "Websites engineered to turn searches into confirmed reservations. Mobile-first date selection, guest checkout without forced accounts, native Apple Pay & Paystack, and sub-second room loading.",
+      "Nigeria's hotel booking web designer, engineering reservation flows built to convert, not just widgets bolted onto a pretty site. Mobile-first date selection, guest checkout, and sub-second speed.",
     keywords: [
       "Hotel Booking Web Designer in Nigeria",
       "hotel reservation system designer Lagos",

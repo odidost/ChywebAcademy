@@ -141,7 +141,7 @@ export default function HospitalityBackgroundEffects() {
             <div className="relative p-3 rounded-2xl bg-white/40 backdrop-blur-xs border border-white/60 shadow-xs group-hover:bg-white group-hover:shadow-lg group-hover:scale-125 transition-all duration-300">
               <IconComponent size={item.size} className={`${item.color} transition-colors duration-300`} />
               {/* Tooltip on hover */}
-              <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-md bg-[#0b0f19] text-white text-[10px] font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-md">
+              <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-md bg-[#2258FF] text-white text-[10px] font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-md">
                 {item.label}
               </span>
             </div>

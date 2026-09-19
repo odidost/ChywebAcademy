@@ -41,10 +41,10 @@ export default function HotelRoiCalculator({ onOpenAuditModal }: HotelRoiCalcula
               Interactive Hotel Direct-Booking ROI Calculator
             </span>
             <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
-              Calculate Your Untapped Revenue & OTA Leaks
+              Calculate How Much You Can Save on OTA Fees
             </h3>
             <p className="text-slate-600 text-xs sm:text-sm mt-1 max-w-xl">
-              See what happens when you fix mobile friction, page speed, and booking engine checkout steps without spending an extra kobo on traffic.
+              See what happens when you make it easy for guests to book directly on their phones without spending an extra kobo on ads.
             </p>
           </div>
 
@@ -162,7 +162,7 @@ export default function HotelRoiCalculator({ onOpenAuditModal }: HotelRoiCalcula
             {/* Background Luxury Hotel Suite Photo */}
             <img
               src="/images/luxury_hotel_suite.jpg"
-              alt="Luxury hotel direct booking revenue unlock in Lagos"
+              alt="Luxury hotel direct booking savings in Lagos"
               className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700"
             />
             {/* Vibrant ChyWeb Royal Gradient Overlay */}
@@ -171,7 +171,7 @@ export default function HotelRoiCalculator({ onOpenAuditModal }: HotelRoiCalcula
             <div className="space-y-4 relative z-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-amber-300 text-xs font-black uppercase tracking-wider mb-1">
                 <TrendingUp size={14} className="text-amber-300" />
-                <span>Your Direct Revenue Unlock</span>
+                <span>Your Direct Monthly Savings</span>
               </div>
 
               <div className="grid grid-cols-2 gap-3 pt-1">
@@ -194,7 +194,7 @@ export default function HotelRoiCalculator({ onOpenAuditModal }: HotelRoiCalcula
 
               <div className="bg-white/15 backdrop-blur-md border border-white/25 rounded-2xl p-4 shadow-sm">
                 <div className="flex justify-between items-center mb-1.5">
-                  <span className="text-xs text-blue-100 font-bold">OTA Commission Retained In-House:</span>
+                  <span className="text-xs text-blue-100 font-bold">OTA Commission Kept in Your Account:</span>
                   <span className="text-sm font-black text-emerald-300">+{formatNaira(otaCommissionsSavedMonthly)}/mo</span>
                 </div>
                 <div className="w-full bg-black/25 h-2 rounded-full overflow-hidden">
@@ -204,13 +204,13 @@ export default function HotelRoiCalculator({ onOpenAuditModal }: HotelRoiCalcula
 
               <div className="p-4.5 rounded-2xl bg-gradient-to-r from-emerald-500/30 via-emerald-400/20 to-amber-400/20 backdrop-blur-md border-2 border-emerald-300/50 shadow-md">
                 <span className="text-[10px] font-black uppercase tracking-wider text-emerald-200 block mb-1">
-                  Estimated 12-Month Net Revenue Lift:
+                  Estimated 12-Month Extra Profit Kept:
                 </span>
                 <div className="text-2xl sm:text-3xl font-black text-white tracking-tight">
                   {formatNaira(annualTotalGain)}
                 </div>
                 <p className="text-[11px] text-blue-100 mt-1 font-medium">
-                  Direct website revenue lift combined with zero 18–25% commissions leaked to OTAs.
+                  Direct website bookings combined with zero 18%–25% commissions paid to middleman booking sites.
                 </p>
               </div>
             </div>
@@ -221,7 +221,7 @@ export default function HotelRoiCalculator({ onOpenAuditModal }: HotelRoiCalcula
                 onClick={onOpenAuditModal}
                 className="w-full py-3.5 px-6 rounded-2xl bg-white hover:bg-slate-100 text-[#2258FF] font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl transition-all hover:scale-[1.02] cursor-pointer"
               >
-                <span>Unlock This Revenue — Request Free Audit</span>
+                <span>Keep This Money — Request Free Audit</span>
                 <ArrowRight size={16} />
               </button>
             </div>

@@ -41,23 +41,23 @@ export default function HospitalityClusterNav({
     },
     {
       title: "Hotel Digital Marketing",
-      subtitle: "4-Channel Revenue Engine",
-      desc: "Stop coordinating 4 uncoordinated freelancers. We unify your website, Google SEO, paid hotel ads, and social media.",
+      subtitle: "Full Hospitality Marketing",
+      desc: "Stop managing separate freelancers who don't talk to each other. We manage your website, Google ranking, paid ads, and social media together.",
       href: "/hotel-digital-marketing-agency-nigeria",
       icon: <Megaphone className="text-[#2258FF]" size={20} />,
-      tag: "4 Channels Unified",
+      tag: "All 4 Channels Handled",
     },
     {
       title: "Hotel Booking Engine Web Design",
-      subtitle: "Frictionless Checkout",
-      desc: "Native reservation engines with 1-tap Paystack cards, instant Nigerian bank transfers, live rates, and zero forced sign-ups.",
+      subtitle: "Easy, Fast Checkout",
+      desc: "Direct reservation engines with 1-tap Paystack cards, instant Nigerian bank transfers, live rates, and zero forced passwords.",
       href: "/hotel-booking-web-designer-nigeria",
       icon: <CalendarCheck className="text-[#2258FF]" size={20} />,
       tag: "Zero OTA Commission",
     },
     {
       title: "Hotel SEO (AEO & GEO)",
-      subtitle: "AI & Maps Domination",
+      subtitle: "Top Maps & AI Rankings",
       desc: "Capture #1 rankings in Google Maps 3-Pack, ChatGPT recommendations, and Google AI Overviews across Lagos, Abuja, and PH.",
       href: "/hotel-seo-agency-nigeria",
       icon: <Search className="text-[#2258FF]" size={20} />,
@@ -110,7 +110,7 @@ export default function HospitalityClusterNav({
                     <span
                       className={`text-[10px] font-mono font-bold px-2.5 py-1 rounded-full ${
                         isCurrent
-                          ? "bg-amber-400 text-slate-950"
+                          ? "bg-amber-400 text-slate-900"
                           : "bg-slate-100 text-slate-600 group-hover:bg-blue-50 group-hover:text-[#2258FF]"
                       }`}
                     >
@@ -164,12 +164,12 @@ export default function HospitalityClusterNav({
           })}
 
           {/* 6th Card: Audit CTA Box */}
-          <div className="rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-gradient-to-br from-slate-950 via-slate-900 to-[#0c1f5a] text-white flex flex-col justify-between border-2 border-white/15 shadow-xl relative overflow-hidden">
+          <div className="rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-gradient-to-br from-[#0a1e64] via-[#0d2888] to-[#1040E6] text-white flex flex-col justify-between border-2 border-white/15 shadow-xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-400/15 rounded-full blur-2xl pointer-events-none" />
 
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-4">
-                <div className="w-10 h-10 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center font-black text-sm">
+                <div className="w-10 h-10 rounded-xl bg-amber-400 text-slate-900 flex items-center justify-center font-black text-sm">
                   FREE
                 </div>
                 <span className="text-[10px] font-mono font-bold bg-amber-400/20 text-amber-300 px-2.5 py-1 rounded-full border border-amber-300/30">
