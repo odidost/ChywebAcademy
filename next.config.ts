@@ -29,6 +29,31 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
+  async redirects() {
+    return [
+      {
+        source: "/blog/seo-for-real-estate-developers-in-nigeria",
+        destination: "/seo-for-real-estate-developers-in-nigeria",
+        permanent: true,
+      },
+      {
+        source: "/blog/healthcare-web-designer-in-nigeria-hospitals-clinics",
+        destination: "/healthcare-web-designer-nigeria",
+        permanent: true,
+      },
+      {
+        source: "/blog/healthcare-web-designer-in-nigeria",
+        destination: "/healthcare-web-designer-nigeria",
+        permanent: true,
+      },
+      {
+        source: "/blog/seo-for-healthcare-in-nigeria",
+        destination: "/seo-for-healthcare-nigeria",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

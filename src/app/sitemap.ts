@@ -28,6 +28,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/hotel-seo-agency-nigeria',
     '/hospitality-audit',
     '/ecommerce-seo-agency-nigeria',
+    '/seo-for-real-estate-developers-in-nigeria',
+    '/real-estate-web-designer-nigeria',
+    '/healthcare-digital-marketing-nigeria',
+    '/healthcare-web-designer-nigeria',
+    '/seo-for-healthcare-nigeria',
   ];
 
   return routes.map((route) => ({

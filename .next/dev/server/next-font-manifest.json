@@ -1,22 +1,30 @@
 {
   "app": {
+    "[project]/src/app/ecommerce-seo-agency-nigeria/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+      "static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2"
+    ],
+    "[project]/src/app/healthcare-digital-marketing-nigeria/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+      "static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2"
+    ],
+    "[project]/src/app/healthcare-web-designer-nigeria/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+      "static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2"
+    ],
     "[project]/src/app/hospitality-digital-marketing-agency-nigeria/page": [
       "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
       "static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2"
     ],
-    "[project]/src/app/hospitality-web-designer-nigeria/page": [
+    "[project]/src/app/real-estate-web-designer-nigeria/page": [
       "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
       "static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2"
     ],
-    "[project]/src/app/hotel-booking-web-designer-nigeria/page": [
+    "[project]/src/app/seo-for-healthcare-nigeria/page": [
       "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
       "static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2"
     ],
-    "[project]/src/app/hotel-digital-marketing-agency-nigeria/page": [
-      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
-      "static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2"
-    ],
-    "[project]/src/app/page": [
+    "[project]/src/app/seo-for-real-estate-developers-in-nigeria/page": [
       "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
       "static/media/fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2"
     ]

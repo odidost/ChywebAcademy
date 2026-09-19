@@ -8,7 +8,7 @@ export default function Footer() {
       {/* Decorative Glow */}
       <div className="absolute top-0 right-0 w-80 h-80 orb-glow-emerald opacity-20 pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-16 relative z-10">
         {/* Brand Column */}
         <div className="flex flex-col gap-5 lg:col-span-2">
           <Link href="/" className="flex items-center group w-fit">
@@ -22,7 +22,7 @@ export default function Footer() {
             />
           </Link>
           <p className="text-slate-300 text-sm leading-relaxed max-w-sm font-sans">
-            Specialist Digital Marketing & Web Development for Hospitality, Hotels, Restaurants, and High-Growth Brands in Nigeria.
+            Specialist Digital Marketing, SEO & Web Development for Real Estate Developers, Healthcare Facilities, Hospitality & High-Growth Brands in Nigeria.
           </p>
           <div className="flex gap-4 items-center mt-2">
             {/* Inline SVG Facebook */}
@@ -76,9 +76,9 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Agency Services Column */}
+        {/* Hospitality Services Column */}
         <div>
-          <h4 className="text-white font-bold mb-6 text-xs uppercase tracking-wider font-sans">Agency Services</h4>
+          <h4 className="text-white font-bold mb-6 text-xs uppercase tracking-wider font-sans">Hospitality</h4>
           <ul className="flex flex-col gap-3.5">
             <li>
               <Link href="/hospitality-digital-marketing-agency-nigeria" className="text-slate-400 text-sm hover:text-white transition-colors font-medium flex items-center gap-1 group">
@@ -113,7 +113,44 @@ export default function Footer() {
             <li>
               <Link href="/hospitality-audit" className="text-amber-400 text-sm hover:text-amber-300 transition-colors font-bold flex items-center gap-1 group">
                 <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-amber-400" />
-                Free 48-Hour Property Audit
+                Property Audit
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Real Estate & Healthcare Column */}
+        <div>
+          <h4 className="text-white font-bold mb-6 text-xs uppercase tracking-wider font-sans">Real Estate & Health</h4>
+          <ul className="flex flex-col gap-3.5">
+            <li>
+              <Link href="/seo-for-real-estate-developers-in-nigeria" className="text-slate-400 text-sm hover:text-white transition-colors font-medium flex items-center gap-1 group">
+                <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-brand-emerald" />
+                Developer SEO
+              </Link>
+            </li>
+            <li>
+              <Link href="/real-estate-web-designer-nigeria" className="text-slate-400 text-sm hover:text-white transition-colors font-medium flex items-center gap-1 group">
+                <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-brand-emerald" />
+                Real Estate Web Design
+              </Link>
+            </li>
+            <li>
+              <Link href="/healthcare-digital-marketing-nigeria" className="text-slate-400 text-sm hover:text-white transition-colors font-medium flex items-center gap-1 group">
+                <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-brand-emerald" />
+                Healthcare Marketing
+              </Link>
+            </li>
+            <li>
+              <Link href="/healthcare-web-designer-nigeria" className="text-slate-400 text-sm hover:text-white transition-colors font-medium flex items-center gap-1 group">
+                <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-brand-emerald" />
+                Healthcare Web Design
+              </Link>
+            </li>
+            <li>
+              <Link href="/seo-for-healthcare-nigeria" className="text-slate-400 text-sm hover:text-white transition-colors font-medium flex items-center gap-1 group">
+                <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200 text-brand-emerald" />
+                Healthcare SEO (AEO)
               </Link>
             </li>
             <li>

@@ -198,6 +198,24 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+// Validate ../../../src/app/healthcare-digital-marketing-nigeria/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/healthcare-digital-marketing-nigeria">> = Specific
+  const handler = {} as typeof import("../../../src/app/healthcare-digital-marketing-nigeria/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/healthcare-web-designer-nigeria/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/healthcare-web-designer-nigeria">> = Specific
+  const handler = {} as typeof import("../../../src/app/healthcare-web-designer-nigeria/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../src/app/hospitality-audit/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/hospitality-audit">> = Specific
@@ -265,6 +283,33 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 {
   type __IsExpected<Specific extends AppPageConfig<"/pricing">> = Specific
   const handler = {} as typeof import("../../../src/app/pricing/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/real-estate-web-designer-nigeria/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/real-estate-web-designer-nigeria">> = Specific
+  const handler = {} as typeof import("../../../src/app/real-estate-web-designer-nigeria/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/seo-for-healthcare-nigeria/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/seo-for-healthcare-nigeria">> = Specific
+  const handler = {} as typeof import("../../../src/app/seo-for-healthcare-nigeria/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/seo-for-real-estate-developers-in-nigeria/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/seo-for-real-estate-developers-in-nigeria">> = Specific
+  const handler = {} as typeof import("../../../src/app/seo-for-real-estate-developers-in-nigeria/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
